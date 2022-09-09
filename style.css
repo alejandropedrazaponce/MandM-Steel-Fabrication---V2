@@ -14,11 +14,11 @@
   --top: 22vh;
 
   /* Swiper */
-  --swiper-image-ratio: 90%; /* ratio 16:9 = 56.25% */
+  --swiper-image-ratio: 75%; /* ratio 16:9 = 56.25% */
   --swiper-width: 50%;
   --swiper-inactive-scale: 0.85; /* makes the other slide smaller */
-  --swiper-mobile-width: 90%;
-  --swiper-mobile-inactive-scale: 0.95;
+  --swiper-mobile-width: 90%; /* mobile */
+  --swiper-mobile-inactive-scale: 0.95; /* mobile*/
 }
 
 * {
@@ -31,7 +31,7 @@ body {
   background-color: var(--color-lightgrey);
   font-family: var(--font);
 }
-/***************  HEADER  ***************/
+/********************************** HEADER **********************************/
 header {
   align-items: center;
   background-color: var(--color-black);
@@ -46,7 +46,7 @@ header {
 header.active {
   height: 15vh;
 }
-/* Logo */
+/********** Logo **********/
 .logo-container {
   height: 100%;
   position: relative;
@@ -64,7 +64,7 @@ header.active {
   height: 100%;
   width: 100%;
 }
-/* Navigation */
+/********** Nav **********/
 .nav-container {
   height: 100%;
   position: relative;
@@ -114,11 +114,41 @@ a:focus::after {
   opacity: 1;
   transform: translate3d(0, 0.2em, 0);
 }
-/***************  CAROUSEL  ***************/
+/********************************** MAIN **********************************/
 main {
   margin-top: var(--top);
   z-index: -1;
 }
+/********** Wallpaper **********/
+.wallpaper-container {
+  position: relative;
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+.wallpaper-img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+  width: 100%;
+}
+.wallpaper-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  border: 1px solid white;
+}
+.wallpaper-container img {
+  opacity: 0.4;
+}
+.wallpaper-container h1 {
+  font-size: 7rem;
+  font-weight: 600;
+}
+/********** Swiper/Slider **********/
 .swiper-container {
   position: relative;
   width: 100%;
@@ -126,7 +156,8 @@ main {
   display: flex;
   align-items: center;
   border: 5px solid red;
-  padding: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .swiper {
   position: relative;
