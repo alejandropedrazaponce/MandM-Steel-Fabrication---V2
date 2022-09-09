@@ -1,32 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap");
 
+/* use REM!!!!!! */
 :root {
   /* Colors */
   --color-black: #000000;
-  --color-white: #f2f2f2;
-  --color-lightgrey: #bdbdbd;
   --color-darkgrey: #aaaaaa;
+  --color-lightgrey: #bdbdbd;
+  --color-white: #f2f2f2;
 
   /* Fonts */
   --font: "Rubik", sans-serif;
 
   /* Measurements */
   --top: 22vh;
+  --sticky-top: 10vh;
 
   /* Swiper */
-  --swiper-image-ratio: 75%; /* ratio 16:9 = 56.25% */
-  --swiper-width: 50%;
-  --swiper-inactive-scale: 0.85; /* makes the other slide smaller */
+  --swiper-image-ratio: 100%; /* ratio 16:9 = 56.25% */
+  --swiper-width: 25%;
+  --swiper-inactive-scale: 0.8; /* makes the other slide smaller */
   --swiper-mobile-width: 90%; /* mobile */
   --swiper-mobile-inactive-scale: 0.95; /* mobile*/
-}
 
+  /* Font-weight */
+  --font-300: 300;
+  --font-400: 400;
+  --font-500: 500;
+
+  /* Font-size */
+  --size-1: 1rem;
+  --size-2: 2rem;
+  --size-3: 3rem;
+  --size-4: 4rem;
+  --size-8: 8rem;
+}
+/********************************** GENERAL SETTINGS  **********************************/
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
 body {
   background-color: var(--color-black);
   font-family: var(--font);
@@ -35,17 +48,17 @@ body {
 header {
   align-items: center;
   background-color: var(--color-black);
+  border-bottom: 1px solid var(--color-white);
   color: var(--color-white);
   display: flex;
   height: var(--top);
-  top: 0;
   position: fixed;
+  top: 0;
   width: 100%;
-  z-index: 2;
-  border-bottom: 1px solid var(--color-white);
+  z-index: 1;
 }
 header.active {
-  height: 15vh;
+  height: var(--sticky-top);
 }
 /********** Logo **********/
 .logo-container {
@@ -55,14 +68,14 @@ header.active {
 }
 .logo-container .img-container {
   height: 100%;
-  width: 25%;
-  position: relative;
   margin-left: 10%;
+  position: relative;
+  width: 25%;
 }
 .logo-container .img-container img {
   cursor: pointer;
-  object-fit: contain;
   height: 100%;
+  object-fit: contain;
   width: 100%;
 }
 /********** Nav **********/
@@ -90,148 +103,128 @@ header.active {
   list-style: none;
 }
 .nav-container ul li a {
-  text-decoration: none;
   color: var(--color-white);
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: var(--size-2);
+  font-weight: var(--font-300);
+  text-decoration: none;
 }
 a {
   display: block;
   position: relative;
 }
 a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0.1em;
   background-color: var(--color-white);
+  bottom: 0;
+  content: "";
+  height: 0.1rem;
+  left: 0;
   opacity: 0;
+  position: absolute;
   transition: opacity 300ms, transform 300ms;
+  width: 100%;
 }
 a:hover::after,
 a:focus::after {
   opacity: 1;
-  transform: translate3d(0, 0.2em, 0);
+  transform: translate3d(0, 0.2rem, 0);
 }
 /********************************** MAIN **********************************/
 main {
   margin-top: var(--top);
-  z-index: -1;
+  z-index: 0;
 }
 /********** Wallpaper **********/
-.wallpaper-container {
+.img-quote-container {
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
   text-align: center;
-  color: white;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
-.wallpaper-img {
+.img-quote-container img {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 70vh;
   opacity: 0.2;
   width: 100%;
 }
-
-.text-container {
+.text-quote-container {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -60%);
   width: 100%;
 }
-.text-container h1 {
-  font-size: 7rem;
-  font-weight: 600;
+.text-quote-container h1 {
+  font-size: var(--size-8);
 }
-.text-container p {
-  font-size: 2rem;
-  font-weight: 400;
+.text-quote-container p {
+  font-size: var(--size-2);
+  font-weight: var(--font-300);
+  margin-top: var(--size-1);
+  word-spacing: var(--size-1);
 }
 /********** Swiper/Slider **********/
-.swiper-container {
+.our-work-swiper-container {
+  padding: var(--size-1);
+}
+.our-work {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
   position: relative;
   width: 100%;
-  height: 100%;
-  display: flex;
+}
+.our-work h1 {
+  color: var(--color-white);
+  font-size: var(--size-4);
+  font-weight: var(--font-300);
+}
+.swiper-container {
   align-items: center;
-  border: 5px solid red;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  display: flex;
+  height: 100%;
+  position: relative;
+  width: 100%;
 }
 .swiper {
-  position: relative;
-  width: 100%;
   height: calc(var(--swiper-width) * var(--swiper-image-ratio) / 100%);
   overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 .swiper-slide {
-  position: relative;
-  width: var(--swiper-width);
   opacity: 0.5;
-  transform: scale(0.84);
-  transition: all 0.3s ease-in-out;
   overflow: hidden;
-  border-radius: 0.4285rem;
-}
-.swiper-backface-hidden .swiper-slide {
-  transform: scale(0.84) translateZ(0);
+  position: relative;
+  transform: scale(0.8);
+  transition: all 0.5s ease-in-out;
+  width: var(--swiper-width);
 }
 .swiper-slide.swiper-slide-active {
-  transform: scale(1) !important;
   opacity: 1 !important;
-}
-.swiper-backface-hidden .swiper-slide.swiper-slide-active {
-  transform: scale(1) translateZ(0) !important;
+  transform: scale(1) !important;
 }
 .swiper-image {
+  padding-top: var(--swiper-image-ratio);
   position: relative;
   width: 100%;
-  padding-top: var(--swiper-image-ratio);
 }
 .swiper-image .image {
+  background-color: transparent;
+  bottom: 0;
+  height: 100%;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
-  bottom: 0;
   width: 100%;
-  height: 100%;
-  background-color: transparent;
 }
 .image img {
-  width: 100%;
   height: 100%;
   object-fit: cover;
+  width: 100%;
 }
-/* responsive settings */
-/* --swiper-mobile-width: 90%;
-  --swiper-mobile-inactive-scale: 0.95; */
-/* @media only screen and (max-width: 768px) {
-  .swiper {
-    height: calc(var(--swiper-mobile-width) * var(--swiper-image-ratio) / 100%);
-  }
-
-  .swiper-slide {
-    width: var(--swiper-mobile-width);
-    transform: scale(var(--swiper-mobile-inactive-scale));
-  }
-
-  .swiper-backface-hidden .swiper-slide.swiper-slide {
-    transform: scale(var(--swiper-mobile-inactive-scale)) translateZ(0);
-  }
-
-  .swiper-button-next {
-    right: calc((100% - var(--swiper-mobile-width)) / 2);
-  }
-
-  .swiper-button-prev {
-    left: calc((100% - var(--swiper-mobile-width)) / 2);
-  }
-} */
