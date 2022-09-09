@@ -1,10 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap");
 
 :root {
+  /* Colors */
   --color-black: #000000;
   --color-white: #f2f2f2;
   --color-lightgrey: #bdbdbd;
-  --colo-darkgrey: #aaaaaa;
+  --color-darkgrey: #aaaaaa;
+
+  /* Fonts */
+  --font: "Rubik", sans-serif;
+
+  /* Measurements */
+  --top: 22vh;
+
+  /* Swiper */
+  --swiper-image-ratio: 90%; /* ratio 16:9 = 56.25% */
+  --swiper-width: 50%;
+  --swiper-inactive-scale: 0.85; /* makes the other slide smaller */
+  --swiper-mobile-width: 90%;
+  --swiper-mobile-inactive-scale: 0.95;
 }
 
 * {
@@ -15,7 +29,7 @@
 
 body {
   background-color: var(--color-lightgrey);
-  font-family: "Rubik", sans-serif;
+  font-family: var(--font);
 }
 /***************  HEADER  ***************/
 header {
@@ -23,9 +37,14 @@ header {
   background-color: var(--color-black);
   color: var(--color-white);
   display: flex;
-  overflow: hidden;
+  height: var(--top);
+  top: 0;
+  position: fixed;
   width: 100%;
-  height: 18vh;
+  z-index: 2;
+}
+header.active {
+  height: 15vh;
 }
 /* Logo */
 .logo-container {
@@ -33,22 +52,17 @@ header {
   position: relative;
   width: 50%;
 }
-.img-text-container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  float: left;
+.logo-container .img-container {
   height: 100%;
+  width: 25%;
   position: relative;
-  width: 50%;
+  margin-left: 10%;
 }
-.logo-container img {
+.logo-container .img-container img {
+  cursor: pointer;
   object-fit: contain;
-  height: auto;
-  width: 100px;
-}
-.logo-container h1 {
-  color: var(--color-white);
+  height: 100%;
+  width: 100%;
 }
 /* Navigation */
 .nav-container {
@@ -80,3 +94,106 @@ header {
   font-size: 1.5rem;
   font-weight: 500;
 }
+a {
+  display: block;
+  position: relative;
+}
+a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: var(--color-white);
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+a:hover::after,
+a:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}
+/***************  CAROUSEL  ***************/
+main {
+  margin-top: var(--top);
+  z-index: -1;
+}
+.swiper-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border: 5px solid red;
+  padding: 2rem;
+}
+.swiper {
+  position: relative;
+  width: 100%;
+  height: calc(var(--swiper-width) * var(--swiper-image-ratio) / 100%);
+  overflow: hidden;
+}
+.swiper-slide {
+  position: relative;
+  width: var(--swiper-width);
+  opacity: 0.5;
+  transform: scale(0.84);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  border-radius: 0.4285rem;
+}
+.swiper-backface-hidden .swiper-slide {
+  transform: scale(0.84) translateZ(0);
+}
+.swiper-slide.swiper-slide-active {
+  transform: scale(1) !important;
+  opacity: 1 !important;
+}
+.swiper-backface-hidden .swiper-slide.swiper-slide-active {
+  transform: scale(1) translateZ(0) !important;
+}
+.swiper-image {
+  position: relative;
+  width: 100%;
+  padding-top: var(--swiper-image-ratio);
+}
+.swiper-image .image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* responsive settings */
+/* --swiper-mobile-width: 90%;
+  --swiper-mobile-inactive-scale: 0.95; */
+/* @media only screen and (max-width: 768px) {
+  .swiper {
+    height: calc(var(--swiper-mobile-width) * var(--swiper-image-ratio) / 100%);
+  }
+
+  .swiper-slide {
+    width: var(--swiper-mobile-width);
+    transform: scale(var(--swiper-mobile-inactive-scale));
+  }
+
+  .swiper-backface-hidden .swiper-slide.swiper-slide {
+    transform: scale(var(--swiper-mobile-inactive-scale)) translateZ(0);
+  }
+
+  .swiper-button-next {
+    right: calc((100% - var(--swiper-mobile-width)) / 2);
+  }
+
+  .swiper-button-prev {
+    left: calc((100% - var(--swiper-mobile-width)) / 2);
+  }
+} */
