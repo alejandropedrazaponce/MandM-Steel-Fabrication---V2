@@ -29,7 +29,7 @@ Don't forget to give the project a star! Thanks again!
 Inspiration, code snippets, etc:
    * [TSwipper](https://codepen.io/adityarahmanda/pen/zYjrEyd)
    * [SheetDB](https://sheetdb.io/apis)
-   * [SheetDB HTML Example] (https://codepen.io/sheetdb/pen/VwPpJqx)
+   * [SheetDB-HTML-Example] (https://codepen.io/sheetdb/pen/VwPpJqx)
 
 ## Contact Me
 
