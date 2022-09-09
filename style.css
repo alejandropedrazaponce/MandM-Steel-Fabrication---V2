@@ -28,7 +28,7 @@
 }
 
 body {
-  background-color: var(--color-lightgrey);
+  background-color: var(--color-black);
   font-family: var(--font);
 }
 /********************************** HEADER **********************************/
@@ -42,6 +42,7 @@ header {
   position: fixed;
   width: 100%;
   z-index: 2;
+  border-bottom: 1px solid var(--color-white);
 }
 header.active {
   height: 15vh;
@@ -125,28 +126,34 @@ main {
   text-align: center;
   color: white;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .wallpaper-img {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 80vh;
+  height: 70vh;
+  opacity: 0.2;
   width: 100%;
 }
-.wallpaper-text {
+
+.text-container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  border: 1px solid white;
 }
-.wallpaper-container img {
-  opacity: 0.4;
-}
-.wallpaper-container h1 {
+.text-container h1 {
   font-size: 7rem;
   font-weight: 600;
+}
+.text-container p {
+  font-size: 2rem;
+  font-weight: 400;
 }
 /********** Swiper/Slider **********/
 .swiper-container {
