@@ -6,6 +6,10 @@ const swiper = new Swiper(".swiper", {
     disableOnInteraction: false,
   },
   centeredSlides: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
 });
 
 /**

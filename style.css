@@ -17,8 +17,8 @@
 
   /* Swiper */
   --swiper-image-ratio: 100%; /* ratio 16:9 = 56.25% */
-  --swiper-width: 25%;
-  --swiper-inactive-scale: 0.8; /* makes the other slide smaller */
+  --swiper-width: 30%;
+  --swiper-inactive-scale: 8.5; /* makes the other slide smaller */
   --swiper-mobile-width: 90%; /* mobile */
   --swiper-mobile-inactive-scale: 0.95; /* mobile*/
 
@@ -43,6 +43,9 @@
 body {
   background-color: var(--color-black);
   font-family: var(--font);
+}
+html {
+  scroll-behavior: smooth;
 }
 /********************************** HEADER **********************************/
 header {
@@ -133,7 +136,7 @@ main {
   margin-top: var(--top);
   z-index: 0;
 }
-/********** Wallpaper **********/
+/********** Image and Quote **********/
 .img-quote-container {
   align-items: center;
   color: white;
@@ -167,8 +170,40 @@ main {
   margin-top: var(--size-1);
   word-spacing: var(--size-1);
 }
+/********** Abot Section**********/
+.about-container {
+  align-items: center;
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.about-container h2 {
+  font-size: var(--size-4);
+  font-weight: var(--font-300);
+}
+.about-container p {
+  font-size: var(--size-2);
+  font-weight: var(--font-300);
+  text-align: center;
+}
+.about-container ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  margin-top: var(--size-2);
+  width: 100%;
+  font-size: var(--size-2);
+  font-weight: var(--font-300);
+  text-align: center;
+}
+.about-container ul li {
+  list-style: none;
+}
 /********** Swiper/Slider **********/
 .our-work-swiper-container {
+  color: var(--color-white);
   padding: var(--size-1);
 }
 .our-work {
@@ -179,10 +214,10 @@ main {
   position: relative;
   width: 100%;
 }
-.our-work h1 {
-  color: var(--color-white);
+.our-work h2 {
   font-size: var(--size-4);
   font-weight: var(--font-300);
+  margin-bottom: var(--size-2);
 }
 .swiper-container {
   align-items: center;
@@ -202,7 +237,7 @@ main {
   overflow: hidden;
   position: relative;
   transform: scale(0.8);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
   width: var(--swiper-width);
 }
 .swiper-slide.swiper-slide-active {
@@ -227,4 +262,32 @@ main {
   height: 100%;
   object-fit: cover;
   width: 100%;
+}
+/********** Swiper/Slider Buttons **********/
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  height: var(--size-2);
+  margin-top: 0;
+  padding: var(--size-2);
+  width: var(--size-2);
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: var(--color-white);
+  font-size: var(--size-2);
+}
+.swiper-button-next {
+  transform: translate(50%, -50%);
+  right: calc((100% - var(--swiper-width)) / 2);
+}
+.swiper-button-prev {
+  transform: translate(-50%, -50%);
+  left: calc((100% - var(--swiper-width)) / 2);
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 1px solid var(--color-white);
 }
