@@ -191,15 +191,11 @@ main {
 .about-container ul {
   display: flex;
   justify-content: space-evenly;
-  list-style: none;
   margin-top: var(--size-2);
   width: 100%;
   font-size: var(--size-2);
   font-weight: var(--font-300);
   text-align: center;
-}
-.about-container ul li {
-  list-style: none;
 }
 /********** Swiper/Slider **********/
 .our-work-swiper-container {
