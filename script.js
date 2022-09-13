@@ -158,7 +158,10 @@ const checkTextArea = (textArea) => {
   return isValid;
 };
 
-const myFunction = () => {
+/**
+ * @description - Success message when the form is submitted
+ */
+const successMessage = () => {
   var x = document.getElementById("snackbar");
   x.className = "show";
   setTimeout(function () {
@@ -180,7 +183,7 @@ btnForm.addEventListener("click", (e) => {
     })
       .then((response) => response.json())
       .then((html) => {
-        myFunction();
+        successMessage();
         form.reset();
         window.scrollTo(0, 0);
       });
