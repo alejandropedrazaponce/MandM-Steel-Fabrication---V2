@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/c8d92e1b3c.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
@@ -11,30 +15,35 @@
 
     <link rel="SHORTCUT ICON" href="/images/logo.jpg" />
     <link rel="stylesheet" href="style.css" />
-    <script async src="script.js"></script>
+    <script defer src="script.js"></script>
     <title>M&M Steel Fab</title>
   </head>
 
   <body>
-    <header>
+    <header id="home">
       <div class="logo-container">
         <div class="img-container">
-          <img class="logo-img" src="images/logo.jpg" alt="logo" />
+          <img
+            class="logo-img"
+            id="home-btn"
+            src="images/logo.jpg"
+            alt="logo"
+          />
         </div>
       </div>
       <div class="nav-container">
         <nav class="nav">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#about" class="about-btn">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a id="home-btn">Home</a></li>
+            <li><a id="about-btn">About</a></li>
+            <li><a id="contact-btn">Contact</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
     <main>
-      <div class="img-quote-container">
+      <section class="img-quote-container">
         <img
           class="img-quote-container"
           src="images/wallpaper.jpg"
@@ -43,143 +52,215 @@
         <div class="text-quote-container">
           <h1>M&M Steel Fab</h1>
           <p>
-            "Un quote bien machin y llegador para que el clienete nos ame"<br />
-            - Attentamente, yo
+            "Quality in a service or products in not what you put into it. It is
+            what the client of customer gets out of it" - Peter Drucker
           </p>
         </div>
-      </div>
+      </section>
 
-      <div class="about-container" id="about">
-        <h2>About Us</h2>
-        <p>
-          Our company offers custom metal fabrication services in the Northwest
-          Arkansas area. We do general metal fabrications such as railing,
-          fence, metal doors and specialize in custom metal parts manufacturing.
-          <br />
-          <br />
-          Some of our custom metal fabrication services include:
-        </p>
-        <ul>
-          <li>Cable Guardrails</li>
-          <li>Iron Gates</li>
-          <li>Iron Doors</li>
-        </ul>
-      </div>
+      <div class="gradient">
+        <section class="about-container" id="about">
+          <h2>About Us</h2>
+          <p>
+            Our company offers custom metal fabrication services in the
+            Northwest Arkansas area. We do general metal fabrications such as
+            railing, fence, metal doors and specialize in custom metal parts
+            manufacturing.
+          </p>
+          <p>Some of our custom metal fabrication services include:</p>
+          <ul>
+            <li>Cable Guardrails</li>
+            <li>Iron Gates</li>
+            <li>Iron Doors</li>
+          </ul>
+        </section>
 
-      <div class="our-work-swiper-container">
-        <div class="our-work"><h2>Here is some of our work:</h2></div>
-        <div class="swiper-container">
-          <div class="swiper">
-            <div class="swiper-wrapper">
-              <!-- Slide 1 -->
-              <div class="swiper-slide">
-                <div class="swiper-image">
-                  <div class="image">
-                    <img src="images/img1.PNG" alt="image" />
+        <div class="div-container"><div class="divider"></div></div>
+
+        <section class="our-work-swiper-container">
+          <div class="our-work"><h2>Our Work:</h2></div>
+          <div class="swiper-container">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                  <div class="swiper-image">
+                    <div class="image">
+                      <img src="images/img1.PNG" alt="image" />
+                    </div>
+                  </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                  <div class="swiper-image">
+                    <div class="image">
+                      <img src="images/img2.PNG" alt="image" />
+                    </div>
+                  </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                  <div class="swiper-image">
+                    <div class="image">
+                      <img src="images/img3.PNG" alt="image" />
+                    </div>
+                  </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                  <div class="swiper-image">
+                    <div class="image">
+                      <img src="images/img4.PNG" alt="image" />
+                    </div>
+                  </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="swiper-slide">
+                  <div class="swiper-image">
+                    <div class="image">
+                      <img src="images/img5.PNG" alt="image" />
+                    </div>
+                  </div>
+                </div>
+                <!-- Slide 6 -->
+                <div class="swiper-slide">
+                  <div class="swiper-image">
+                    <div class="image">
+                      <img src="images/img6.PNG" alt="image" />
+                    </div>
+                  </div>
+                </div>
+                <!-- Slide 7 -->
+                <div class="swiper-slide">
+                  <div class="swiper-image">
+                    <div class="image">
+                      <img src="images/img7.PNG" alt="image" />
+                    </div>
+                  </div>
+                </div>
+                <!-- Slide 8 -->
+                <div class="swiper-slide">
+                  <div class="swiper-image">
+                    <div class="image">
+                      <img src="images/img8.PNG" alt="image" />
+                    </div>
+                  </div>
+                </div>
+                <!-- Slide 9 -->
+                <div class="swiper-slide">
+                  <div class="swiper-image">
+                    <div class="image">
+                      <img src="images/img9.PNG" alt="image" />
+                    </div>
+                  </div>
+                </div>
+                <!-- Slide 10 -->
+                <div class="swiper-slide">
+                  <div class="swiper-image">
+                    <div class="image">
+                      <img src="images/img10.PNG" alt="image" />
+                    </div>
+                  </div>
+                </div>
+                <!-- Slide 11 -->
+                <div class="swiper-slide">
+                  <div class="swiper-image">
+                    <div class="image">
+                      <img src="images/img11.PNG" alt="image" />
+                    </div>
+                  </div>
+                </div>
+                <!-- Slide 12 -->
+                <div class="swiper-slide">
+                  <div class="swiper-image">
+                    <div class="image">
+                      <img src="images/img12.PNG" alt="image" />
+                    </div>
                   </div>
                 </div>
               </div>
-              <!-- Slide 2 -->
-              <div class="swiper-slide">
-                <div class="swiper-image">
-                  <div class="image">
-                    <img src="images/img2.PNG" alt="image" />
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 3 -->
-              <div class="swiper-slide">
-                <div class="swiper-image">
-                  <div class="image">
-                    <img src="images/img3.PNG" alt="image" />
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 4 -->
-              <div class="swiper-slide">
-                <div class="swiper-image">
-                  <div class="image">
-                    <img src="images/img4.PNG" alt="image" />
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 5 -->
-              <div class="swiper-slide">
-                <div class="swiper-image">
-                  <div class="image">
-                    <img src="images/img5.PNG" alt="image" />
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 6 -->
-              <div class="swiper-slide">
-                <div class="swiper-image">
-                  <div class="image">
-                    <img src="images/img6.PNG" alt="image" />
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 7 -->
-              <div class="swiper-slide">
-                <div class="swiper-image">
-                  <div class="image">
-                    <img src="images/img7.PNG" alt="image" />
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 8 -->
-              <div class="swiper-slide">
-                <div class="swiper-image">
-                  <div class="image">
-                    <img src="images/img8.PNG" alt="image" />
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 9 -->
-              <div class="swiper-slide">
-                <div class="swiper-image">
-                  <div class="image">
-                    <img src="images/img9.PNG" alt="image" />
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 10 -->
-              <div class="swiper-slide">
-                <div class="swiper-image">
-                  <div class="image">
-                    <img src="images/img10.PNG" alt="image" />
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 11 -->
-              <div class="swiper-slide">
-                <div class="swiper-image">
-                  <div class="image">
-                    <img src="images/img11.PNG" alt="image" />
-                  </div>
-                </div>
-              </div>
-              <!-- Slide 12 -->
-              <div class="swiper-slide">
-                <div class="swiper-image">
-                  <div class="image">
-                    <img src="images/img12.PNG" alt="image" />
-                  </div>
-                </div>
-              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
             </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+          </div>
+        </section>
+      </div>
+
+      <section id="contact">
+        <div class="contact-us-container">
+          <h2>Contact Us</h2>
+          <p>
+            Call / Text:
+            <span class="strong"><br /><u> 479-334-9884 </u></span>
+          </p>
+          <p>
+            Email:
+            <span class="strong"><br /><u> mterrazas@mnmsteelfab.com </u></span>
+          </p>
+          <div class="social-medias-container">
+            <a href="https://www.instagram.com/mmsteelfab/" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/mmsteelfab/" target="_blank">
+              <i class="fa-brands fa-facebook"></i
+            ></a>
           </div>
         </div>
-      </div>
+
+        <div class="submit-form-container">
+          <div class="info-message-container">
+            <h2>Request a Quote</h2>
+            <form
+              action="https://sheetdb.io/api/v1/tz02ofoiz3xgc"
+              method="POST"
+              id="sheetdb-form"
+            >
+              <div class="info-container">
+                <span>
+                  <p>Name</p>
+                  <input
+                    name="data[name]"
+                    type="text"
+                    placeholder="Required"
+                    id="name"
+                    required
+                /></span>
+                <span
+                  ><p>Number</p>
+                  <input
+                    name="data[number]"
+                    type="text"
+                    placeholder="xxx-xxx-xxxx"
+                    id="number"
+                    required
+                /></span>
+                <span
+                  ><p>Email</p>
+                  <input
+                    name="data[email]"
+                    type="text"
+                    placeholder="youremail@email.com"
+                    id="email"
+                    required
+                /></span>
+              </div>
+              <div class="message-container">
+                <p>Message</p>
+                <textarea
+                  name="data[message]"
+                  rows="5"
+                  cols="50"
+                  placeholder="How can we help you?"
+                ></textarea>
+                <div class="btn-container">
+                  <button type="submit" class="btn">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer>
-      <div class="contact-container" id="contact">
-        <h2>Contact Us</h2>
-        <p>
-          <strong>Phone:</strong> 479-789-1234<br />
-          <strong>Email:</strong>
-    </footer>
+    <div id="snackbar">Your message has been sent</div>
   </body>
 </html>

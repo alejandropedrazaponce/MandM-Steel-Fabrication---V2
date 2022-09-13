@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap");
 
-/* use REM!!!!!! */
+/************************************************* ROOT SETTINGS  *************************************************/
 :root {
   /* Colors */
   --color-black: #000000;
@@ -34,7 +34,7 @@
   --size-4: 4rem;
   --size-8: 8rem;
 }
-/********************************** GENERAL SETTINGS  **********************************/
+/************************************************* GENERAL SETTINGS  *************************************************/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -43,22 +43,22 @@
 body {
   background-color: var(--color-black);
   font-family: var(--font);
+  color: var(--color-white);
 }
 html {
   scroll-behavior: smooth;
 }
-/********************************** HEADER **********************************/
+/************************************************* HEADER *************************************************/
 header {
   align-items: center;
   background-color: var(--color-black);
   border-bottom: 1px solid var(--color-white);
-  color: var(--color-white);
   display: flex;
   height: var(--top);
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 header.active {
   height: var(--sticky-top);
@@ -103,19 +103,21 @@ header.active {
   width: 100%;
 }
 .nav-container ul li {
+  cursor: pointer;
   list-style: none;
 }
 .nav-container ul li a {
-  color: var(--color-white);
   font-size: var(--size-2);
   font-weight: var(--font-300);
   text-decoration: none;
 }
-a {
+.nav a,
+.btn {
   display: block;
   position: relative;
 }
-a::after {
+.nav a::after,
+.btn::after {
   background-color: var(--color-white);
   bottom: 0;
   content: "";
@@ -126,12 +128,14 @@ a::after {
   transition: opacity 300ms, transform 300ms;
   width: 100%;
 }
-a:hover::after,
-a:focus::after {
+.nav a:hover::after,
+.nav a:focus::after,
+.btn:hover::after,
+.btn:focus::after {
   opacity: 1;
   transform: translate3d(0, 0.2rem, 0);
 }
-/********************************** MAIN **********************************/
+/************************************************* MAIN *************************************************/
 main {
   margin-top: var(--top);
   z-index: 0;
@@ -139,26 +143,26 @@ main {
 /********** Image and Quote **********/
 .img-quote-container {
   align-items: center;
-  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
   text-align: center;
   width: 100%;
+  background-color: transparent;
 }
 .img-quote-container img {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.2;
+  opacity: 0.5;
   width: 100%;
 }
 .text-quote-container {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -60%);
+  transform: translate(-50%, -50%);
   width: 100%;
 }
 .text-quote-container h1 {
@@ -168,39 +172,71 @@ main {
   font-size: var(--size-2);
   font-weight: var(--font-300);
   margin-top: var(--size-1);
-  word-spacing: var(--size-1);
+  padding: 0 var(--size-4);
 }
-/********** Abot Section**********/
+/********** Main Page Background**********/
+.gradient {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(170, 170, 170, 1) 100%
+  );
+}
+/********** About Section **********/
 .about-container {
   align-items: center;
-  color: var(--color-white);
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  padding: var(--size-2);
+  text-align: center;
+}
+.about-container > * + * {
+  margin-top: var(--size-2);
 }
 .about-container h2 {
   font-size: var(--size-4);
   font-weight: var(--font-300);
 }
-.about-container p {
+.about-container p,
+.about-container ul {
   font-size: var(--size-2);
   font-weight: var(--font-300);
-  text-align: center;
 }
 .about-container ul {
   display: flex;
   justify-content: space-evenly;
-  margin-top: var(--size-2);
   width: 100%;
-  font-size: var(--size-2);
-  font-weight: var(--font-300);
-  text-align: center;
 }
-/********** Swiper/Slider **********/
+/********** Divider **********/
+.div-container {
+  padding: 35px 0 35px 0;
+  position: relative;
+  width: 100%;
+}
+.divider {
+  background: linear-gradient(
+      to right,
+      transparent,
+      transparent,
+      var(--color-white),
+      var(--color-lightgrey),
+      var(--color-darkgrey),
+      var(--color-lightgrey),
+      var(--color-white),
+      transparent,
+      transparent
+    )
+    left bottom transparent no-repeat;
+  padding: 1px;
+  margin: 0 auto;
+  width: 100%;
+}
+/********** Our Work/Swiper Container **********/
 .our-work-swiper-container {
-  color: var(--color-white);
-  padding: var(--size-1);
+  padding: 0 0 var(--size-4) 0;
 }
 .our-work {
   align-items: center;
@@ -215,6 +251,7 @@ main {
   font-weight: var(--font-300);
   margin-bottom: var(--size-2);
 }
+/********** Our Work Swiper **********/
 .swiper-container {
   align-items: center;
   display: flex;
@@ -229,7 +266,7 @@ main {
   width: 100%;
 }
 .swiper-slide {
-  opacity: 0.5;
+  filter: brightness(35%);
   overflow: hidden;
   position: relative;
   transform: scale(0.8);
@@ -239,6 +276,7 @@ main {
 .swiper-slide.swiper-slide-active {
   opacity: 1 !important;
   transform: scale(1) !important;
+  filter: brightness(100%);
 }
 .swiper-image {
   padding-top: var(--swiper-image-ratio);
@@ -262,7 +300,7 @@ main {
 /********** Swiper/Slider Buttons **********/
 .swiper-button-next,
 .swiper-button-prev {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
   height: var(--size-2);
   margin-top: 0;
@@ -284,6 +322,181 @@ main {
 }
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  background-color: rgba(0, 0, 0, 0.9);
-  border: 1px solid var(--color-white);
+  background-color: rgba(0, 0, 0, 1);
+}
+/************************************************* FOOTER *************************************************/
+#contact {
+  display: flex;
+  flex-direction: row;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--color-black);
+  padding: var(--size-2);
+}
+/********** Contact Us Section **********/
+.contact-us-container {
+  display: flex;
+  float: left;
+  height: auto;
+  position: relative;
+  width: 20%;
+  flex-direction: column;
+}
+.contact-us-container > * + *,
+.info-container > * + * {
+  margin-top: var(--size-1);
+}
+.contact-us-container h2,
+.submit-form-container h2 {
+  font-size: var(--size-2);
+  font-weight: var(--font-300);
+}
+.contact-us-container p,
+.submit-form-container p,
+.message-container p {
+  font-size: var(--size-1);
+  font-weight: var(--font-300);
+}
+.contact-us-container .strong {
+  font-size: var(--size-1);
+  font-weight: var(--font-500);
+}
+.social-medias-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-top: var(--size-1);
+  gap: var(--size-4);
+}
+.social-medias-container a {
+  color: var(--color-white);
+  font-size: var(--size-3);
+  font-weight: var(--font-300);
+}
+/********** Submit Form Section **********/
+.submit-form-container {
+  align-items: center;
+  height: auto;
+  position: relative;
+  width: 80%;
+  float: right;
+}
+.info-message-container {
+  float: right;
+  width: 60%;
+}
+.info-message-container form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: var(--size-1);
+}
+.info-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+.info-container input {
+  border: none;
+  background-color: transparent;
+  color: var(--color-white);
+  font-size: var(--size-1);
+  width: 100%;
+  margin-left: var(--size-1);
+  border-bottom: 1px solid var(--color-white);
+  padding: 0.2rem;
+  font-weight: var(--font-500);
+  margin-top: 0.4rem;
+}
+.info-container input:focus {
+  outline: none;
+}
+.info-container input.error {
+  border-bottom: 1px solid red;
+}
+.info-container input::placeholder,
+.message-container textarea::placeholder {
+  opacity: 0.5;
+}
+.message-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  width: auto;
+  margin-left: var(--size-3);
+}
+.message-container textarea {
+  resize: none;
+  margin-top: 0.8rem;
+  border: var(--color-white) 1px solid;
+  color: var(--color-white);
+  font-size: var(--size-1);
+  font-family: var(--font);
+  background-color: transparent;
+  padding: 0.5rem;
+}
+.message-container textarea:focus {
+  outline: none;
+}
+.message-container textarea.error {
+  border: 1px solid red;
+}
+.btn-container {
+  display: flex;
+  width: 100%;
+  margin-top: var(--size-1);
+  align-items: center;
+  justify-content: flex-end;
+}
+.btn-container .btn {
+  cursor: pointer;
+  font-size: var(--size-1);
+  background: transparent;
+  color: var(--color-white);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/********** Success Message **********/
+#snackbar {
+  visibility: hidden;
+  min-width: var(--size-4);
+  margin-left: -145px;
+  background-color: #24fe41;
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--size-2);
+  position: fixed;
+  z-index: 3;
+  left: 50%;
+  top: var(--size-2);
+  font-size: var(--size-1);
+  font-weight: var(--font-500);
+}
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+@keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 30px;
+    opacity: 1;
+  }
+}
+@keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
 }
