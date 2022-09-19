@@ -4,16 +4,16 @@
 :root {
   /* Colors */
   --color-black: #000000;
-  --color-darkgrey: #aaaaaa;
-  --color-lightgrey: #bdbdbd;
-  --color-white: #f2f2f2;
-
-  /* Fonts */
-  --font: "Rubik", sans-serif;
+  --color-white: #ffffff;
 
   /* Measurements */
   --top: 22vh;
   --sticky-top: 10vh;
+
+  /* Font-weight */
+  --font300: 300;
+  --font400: 400;
+  --font500: 500;
 
   /* Swiper */
   --swiper-image-ratio: 100%; /* ratio 16:9 = 56.25% */
@@ -21,18 +21,6 @@
   --swiper-inactive-scale: 8.5; /* makes the other slide smaller */
   --swiper-mobile-width: 90%; /* mobile */
   --swiper-mobile-inactive-scale: 0.95; /* mobile*/
-
-  /* Font-weight */
-  --font-300: 300;
-  --font-400: 400;
-  --font-500: 500;
-
-  /* Font-size */
-  --size-1: 1rem;
-  --size-2: 2rem;
-  --size-3: 3rem;
-  --size-4: 4rem;
-  --size-8: 8rem;
 }
 /************************************************* GENERAL SETTINGS  *************************************************/
 * {
@@ -42,15 +30,11 @@
 }
 body {
   background-color: var(--color-black);
-  font-family: var(--font);
+  font-family: "Rubik", sans-serif;
   color: var(--color-white);
-}
-html {
-  scroll-behavior: smooth;
 }
 /************************************************* HEADER *************************************************/
 header {
-  align-items: center;
   background-color: var(--color-black);
   border-bottom: 1px solid var(--color-white);
   display: flex;
@@ -63,61 +47,53 @@ header {
 header.active {
   height: var(--sticky-top);
 }
-/********** Logo **********/
-.logo-container {
-  height: 100%;
+/********** Logo/Nav **********/
+.logo-container,
+.nav-container {
+  flex: 1;
+  align-items: center;
+  display: flex;
   position: relative;
-  width: 50%;
+  padding: 0.5rem;
 }
+/********** Logo **********/
 .logo-container .img-container {
   height: 100%;
-  margin-left: 10%;
-  position: relative;
-  width: 25%;
+  width: 100%;
+  flex-basis: 40%;
 }
 .logo-container .img-container img {
-  cursor: pointer;
   height: 100%;
-  object-fit: contain;
   width: 100%;
+  object-fit: contain;
+  cursor: pointer;
 }
 /********** Nav **********/
 .nav-container {
-  height: 100%;
-  position: relative;
-  width: 50%;
+  justify-content: flex-end;
 }
 .nav {
-  align-items: center;
   display: flex;
-  float: right;
+  flex-basis: 100%;
+  align-items: center;
   height: 100%;
-  position: relative;
-  width: 70%;
 }
-.nav-container ul {
+.nav ul {
   display: flex;
   justify-content: space-evenly;
   list-style: none;
-  position: relative;
-  width: 100%;
+  flex-basis: 100%;
 }
-.nav-container ul li {
+.nav ul li a {
+  font-size: 1.5rem;
+  font-weight: var(--font500);
+  text-decoration: none;
+  display: block;
+  position: relative;
   cursor: pointer;
   list-style: none;
 }
-.nav-container ul li a {
-  font-size: var(--size-2);
-  font-weight: var(--font-300);
-  text-decoration: none;
-}
-.nav a,
-.btn {
-  display: block;
-  position: relative;
-}
-.nav a::after,
-.btn::after {
+.nav ul li a::after {
   background-color: var(--color-white);
   bottom: 0;
   content: "";
@@ -129,16 +105,13 @@ header.active {
   width: 100%;
 }
 .nav a:hover::after,
-.nav a:focus::after,
-.btn:hover::after,
-.btn:focus::after {
+.nav a:focus::after {
   opacity: 1;
-  transform: translate3d(0, 0.2rem, 0);
+  transform: translate3d(0, 0.1rem, 0);
 }
 /************************************************* MAIN *************************************************/
 main {
   margin-top: var(--top);
-  z-index: 0;
 }
 /********** Image and Quote **********/
 .img-quote-container {
@@ -148,7 +121,6 @@ main {
   justify-content: center;
   position: relative;
   text-align: center;
-  width: 100%;
   background-color: transparent;
 }
 .img-quote-container img {
@@ -166,13 +138,12 @@ main {
   width: 100%;
 }
 .text-quote-container h1 {
-  font-size: var(--size-8);
+  font-size: 8rem;
 }
 .text-quote-container p {
-  font-size: var(--size-2);
+  font-size: 2em;
   font-weight: var(--font-300);
-  margin-top: var(--size-1);
-  padding: 0 var(--size-4);
+  padding: 2rem;
 }
 /********** Main Page Background**********/
 .gradient {
@@ -180,7 +151,7 @@ main {
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 1) 0%,
-    rgba(170, 170, 170, 1) 100%
+    rgba(255, 255, 255, 1) 100%
   );
 }
 /********** About Section **********/
@@ -190,25 +161,34 @@ main {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  padding: var(--size-2);
+  padding: 1rem 5rem 0 5rem;
   text-align: center;
 }
 .about-container > * + * {
-  margin-top: var(--size-2);
+  margin-top: 1rem;
 }
-.about-container h2 {
-  font-size: var(--size-4);
-  font-weight: var(--font-300);
+.about-container h3 {
+  font-size: 4rem;
+  font-weight: var(--font400);
 }
 .about-container p,
 .about-container ul {
-  font-size: var(--size-2);
-  font-weight: var(--font-300);
+  font-size: 1.5rem;
+  font-weight: var(--font300);
+  line-height: 2rem;
+}
+.about-container span {
+  font-weight: var(--font400);
+  font-size: 2.5rem;
 }
 .about-container ul {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
+  column-count: 2;
+  column-gap: 8rem;
+}
+.about-container ul li {
+  padding: 0.5rem;
+  list-style: circle;
+  display: list-item;
 }
 /********** Divider **********/
 .div-container {
@@ -222,9 +202,7 @@ main {
       transparent,
       transparent,
       var(--color-white),
-      var(--color-lightgrey),
-      var(--color-darkgrey),
-      var(--color-lightgrey),
+      var(--color-white),
       var(--color-white),
       transparent,
       transparent
@@ -236,7 +214,7 @@ main {
 }
 /********** Our Work/Swiper Container **********/
 .our-work-swiper-container {
-  padding: 0 0 var(--size-4) 0;
+  padding: 0 0 3rem 0;
 }
 .our-work {
   align-items: center;
@@ -244,12 +222,16 @@ main {
   height: 100%;
   justify-content: center;
   position: relative;
-  width: 100%;
 }
-.our-work h2 {
-  font-size: var(--size-4);
-  font-weight: var(--font-300);
-  margin-bottom: var(--size-2);
+.our-work h3 {
+  font-size: 4rem;
+  font-weight: var(--font400);
+  margin-bottom: 1rem;
+}
+.our-work p {
+  font-size: 1.5rem;
+  font-weight: var(--font300);
+  line-height: 2rem;
 }
 /********** Our Work Swiper **********/
 .swiper-container {

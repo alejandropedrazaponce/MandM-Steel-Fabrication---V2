@@ -20,10 +20,9 @@ const swiper = new Swiper(".swiper", {
  */
 const header = document.querySelector("header");
 const imgContainer = document.querySelector(".img-container");
-window.addEventListener("scroll", fixHeader);
 
-function fixHeader() {
-  if (window.scrollY > 0) {
+const fixHeader = () => {
+  if (window.scrollY > 100) {
     header.classList.add("active");
     imgContainer.style.width = "15%";
     imgContainer.style.transition = "all 0.5s";
@@ -33,16 +32,16 @@ function fixHeader() {
     imgContainer.style.width = "25%";
     imgContainer.style.transition = "all 0.5s";
   }
-}
-
+};
+window.addEventListener("scroll", fixHeader);
 /**
  * @description - When the user clicks on the home button or logo, the page will reload
  * and scroll to the top
  */
 const homeBtns = document.querySelectorAll("#home-btn");
-const homeSection = document.querySelector("#home");
 homeBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
+    location.reload();
     window.scrollTo(0, 0);
   });
 });
