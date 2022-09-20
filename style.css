@@ -12,7 +12,6 @@
 
   /* Font-weight */
   --font300: 300;
-  --font400: 400;
   --font500: 500;
 
   /* Swiper */
@@ -47,7 +46,6 @@ header {
 header.active {
   height: var(--sticky-top);
 }
-/********** Logo/Nav **********/
 .logo-container,
 .nav-container {
   flex: 1;
@@ -101,7 +99,7 @@ header.active {
   left: 0;
   opacity: 0;
   position: absolute;
-  transition: opacity 300ms, transform 300ms;
+  transition: opacity 0.3s, transform 0.3s;
   width: 100%;
 }
 .nav a:hover::after,
@@ -127,9 +125,9 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.2;
+  opacity: 0.3;
   width: 100%;
-  height: 80vh;
+  height: 75vh;
   width: auto;
 }
 .text-quote-container {
@@ -171,7 +169,7 @@ main {
 }
 .about-container h3 {
   font-size: 4rem;
-  font-weight: var(--font400);
+  font-weight: var(--font300);
 }
 .about-container p,
 .about-container ul {
@@ -180,7 +178,7 @@ main {
   line-height: 2rem;
 }
 .about-container span {
-  font-weight: var(--font400);
+  font-weight: var(--font500);
   font-size: 2.5rem;
 }
 .about-container ul {
@@ -215,9 +213,6 @@ main {
   width: 100%;
 }
 /********** Our Work/Swiper Container **********/
-.our-work-swiper-container {
-  padding: 0 0 3rem 0;
-}
 .our-work {
   align-items: center;
   display: flex;
@@ -227,13 +222,29 @@ main {
 }
 .our-work h3 {
   font-size: 4rem;
-  font-weight: var(--font400);
+  font-weight: var(--font300);
   margin-bottom: 1rem;
 }
 .our-work p {
+  color: var(--color-black);
+  font-size: 2rem;
+  font-weight: var(--font500);
+  padding: 2rem;
+}
+.our-work p button {
+  background-color: var(--color-black);
+  border: 1px solid var(--color-white);
+  border-radius: 0.5rem;
+  color: var(--color-white);
+  cursor: pointer;
   font-size: 1.5rem;
-  font-weight: var(--font300);
-  line-height: 2rem;
+  font-weight: var(--font500);
+  padding: 0.25rem 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+.our-work p button:hover {
+  /*change size qhen hover*/
+  transform: scale(1.1);
 }
 /********** Our Work Swiper **********/
 .swiper-container {
@@ -282,7 +293,7 @@ main {
   width: 100%;
 }
 /********** Swiper/Slider Buttons **********/
-.swiper-button-next,
+/* .swiper-button-next,
 .swiper-button-prev {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
@@ -307,58 +318,71 @@ main {
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
   background-color: rgba(0, 0, 0, 1);
-}
+} */
 /************************************************* FOOTER *************************************************/
-#contact {
+footer {
+  background-color: var(--color-black);
   display: flex;
-  flex-direction: row;
+  position: relative;
   bottom: 0;
   width: 100%;
-  background-color: var(--color-black);
-  padding: var(--size-2);
+  padding: 0.5rem 6rem 1.5rem 4rem;
+}
+footer h3 {
+  font-size: 2.5rem;
+  font-weight: var(--font300);
+}
+footer p {
+  font-size: 1.5rem;
+  font-weight: var(--font300);
+}
+.contact-us-container,
+.follow-us-container {
+  flex: 1;
+  align-items: center;
+  display: flex;
+  position: relative;
+  /* border: 2px solid var(--color-white); */
 }
 /********** Contact Us Section **********/
 .contact-us-container {
   display: flex;
-  float: left;
-  height: auto;
-  position: relative;
-  width: 20%;
   flex-direction: column;
+  align-items: flex-start;
 }
-.contact-us-container > * + *,
-.info-container > * + * {
-  margin-top: var(--size-1);
-}
-.contact-us-container h2,
-.submit-form-container h2 {
-  font-size: var(--size-2);
-  font-weight: var(--font-300);
-}
-.contact-us-container p,
-.submit-form-container p,
-.message-container p {
-  font-size: var(--size-1);
-  font-weight: var(--font-300);
+.contact-us div,
+.follow-us-container .social-medias-container {
+  margin-top: 1.5rem;
 }
 .contact-us-container .strong {
-  font-size: var(--size-1);
-  font-weight: var(--font-500);
+  font-weight: var(--font500);
 }
-.social-medias-container {
+/********** Follow Us Section **********/
+.follow-us-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.follow-us {
+  display: flex;
+  flex-direction: column;
+}
+.follow-us-container .social-medias-container {
   display: flex;
   flex-direction: row;
   width: 100%;
-  padding-top: var(--size-1);
-  gap: var(--size-4);
+  gap: 3.5rem;
 }
 .social-medias-container a {
   color: var(--color-white);
-  font-size: var(--size-3);
-  font-weight: var(--font-300);
+  font-size: 4rem;
+  transition: all 0.3s ease-in-out;
 }
-/********** Submit Form Section **********/
-.submit-form-container {
+.social-medias-container a:hover {
+  transform: scale(1.3);
+}
+
+/* .submit-form-container {
   align-items: center;
   height: auto;
   position: relative;
@@ -442,7 +466,7 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
+} */
 /********** Success Message **********/
 #snackbar {
   visibility: hidden;

@@ -25,12 +25,12 @@ const fixHeader = () => {
   if (window.scrollY > 100) {
     header.classList.add("active");
     imgContainer.style.width = "15%";
-    imgContainer.style.transition = "all 0.5s";
+    imgContainer.style.transition = "all 0.4s";
   } else {
     header.classList.remove("active");
     header.style.transition = "all 0.5s";
     imgContainer.style.width = "25%";
-    imgContainer.style.transition = "all 0.5s";
+    imgContainer.style.transition = "all 0.4s";
   }
 };
 window.addEventListener("scroll", fixHeader);
@@ -54,7 +54,7 @@ const aboutBtn = document.querySelector("#about-btn");
 const aboutSection = document.querySelector("#about");
 aboutBtn.addEventListener("click", () => {
   window.scrollTo({
-    top: document.querySelector("#about").offsetTop - 75,
+    top: document.querySelector("#about").offsetTop - 55,
     behavior: "smooth",
   });
 });
