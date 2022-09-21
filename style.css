@@ -225,27 +225,6 @@ main {
   font-weight: var(--font300);
   margin-bottom: 1rem;
 }
-.our-work p {
-  color: var(--color-black);
-  font-size: 2rem;
-  font-weight: var(--font500);
-  padding: 2rem;
-}
-.our-work p button {
-  background-color: var(--color-black);
-  border: 1px solid var(--color-white);
-  border-radius: 0.5rem;
-  color: var(--color-white);
-  cursor: pointer;
-  font-size: 1.5rem;
-  font-weight: var(--font500);
-  padding: 0.25rem 0.5rem;
-  transition: all 0.3s ease-in-out;
-}
-.our-work p button:hover {
-  transform: scale(1.1);
-}
-
 /********** Our Work Swiper **********/
 .swiper-container {
   align-items: center;
@@ -292,6 +271,28 @@ main {
   object-fit: cover;
   width: 100%;
 }
+/********** Click for More **********/
+.our-work p {
+  color: var(--color-black);
+  font-size: 2rem;
+  font-weight: var(--font500);
+  padding: 2rem;
+}
+.our-work p button {
+  background-color: var(--color-black);
+  border: 1px solid var(--color-white);
+  border-radius: 0.5rem;
+  color: var(--color-white);
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: var(--font500);
+  padding: 0.25rem 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+.our-work p button:hover {
+  transform: scale(1.1);
+}
+
 /********** Swiper/Slider Buttons **********/
 /* .swiper-button-next,
 .swiper-button-prev {
@@ -326,11 +327,12 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
-  padding: 0.5rem 6rem 1.5rem 4rem;
 }
 footer h3 {
   font-size: 2.5rem;
   font-weight: var(--font300);
+  position: absolute;
+  top: 0.5rem;
 }
 footer p {
   font-size: 1.5rem;
@@ -341,45 +343,101 @@ footer p {
   flex: 1;
   align-items: center;
   display: flex;
-  position: relative;
-  /* border: 2px solid var(--color-white); */
+  justify-content: center;
+  flex-direction: column;
 }
 /********** Contact Us Section **********/
-.contact-us-container {
+.contact-us {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-}
-.contact-us div,
-.follow-us-container .social-medias-container {
-  margin-top: 1.5rem;
+  position: relative;
+  margin: 3rem 0 2rem 0;
 }
 .contact-us-container .strong {
+  font-size: 1.5rem;
   font-weight: var(--font500);
+}
+.call-email {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+#email,
+#phone {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+#email:hover,
+#phone:hover {
+  transform: scale(1.1);
 }
 /********** Follow Us Section **********/
 .follow-us-container {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
 }
 .follow-us {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.follow-us-container .social-medias-container {
+.social-medias-container {
   display: flex;
   flex-direction: row;
-  width: 100%;
-  gap: 3.5rem;
+  gap: 5rem;
+  margin-top: 2rem;
+  align-items: center;
+  justify-content: center;
 }
 .social-medias-container a {
   color: var(--color-white);
-  font-size: 4rem;
+  font-size: 5rem;
   transition: all 0.3s ease-in-out;
 }
 .social-medias-container a:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
+}
+/************************************************* Messages *************************************************/
+#copied {
+  visibility: hidden;
+  margin-left: -145px;
+  background-color: #24fe41;
+  color: var(--color-white);
+  text-align: center;
+  padding: 1.5rem;
+  position: fixed;
+  z-index: 3;
+  left: 50%;
+  bottom: 6rem;
+  font-size: 1.25rem;
+}
+#copied.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 6rem;
+    opacity: 1;
+  }
+}
+@keyframes fadeout {
+  from {
+    bottom: 6rem;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 /* .submit-form-container {
@@ -467,44 +525,3 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 } */
-/********** Success Message **********/
-#snackbar {
-  visibility: hidden;
-  min-width: var(--size-4);
-  margin-left: -145px;
-  background-color: #24fe41;
-  color: var(--color-white);
-  text-align: center;
-  padding: var(--size-2);
-  position: fixed;
-  z-index: 3;
-  left: 50%;
-  top: var(--size-2);
-  font-size: var(--size-1);
-  font-weight: var(--font-500);
-}
-#snackbar.show {
-  visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-@keyframes fadein {
-  from {
-    top: 0;
-    opacity: 0;
-  }
-  to {
-    top: 30px;
-    opacity: 1;
-  }
-}
-@keyframes fadeout {
-  from {
-    top: 30px;
-    opacity: 1;
-  }
-  to {
-    top: 0;
-    opacity: 0;
-  }
-}
