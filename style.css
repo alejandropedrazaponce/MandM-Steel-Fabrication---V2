@@ -72,7 +72,7 @@ header.active {
 }
 .nav {
   display: flex;
-  flex-basis: 100%;
+  flex-basis: 80%;
   align-items: center;
   height: 100%;
 }
@@ -278,7 +278,8 @@ main {
   font-weight: var(--font500);
   padding: 2rem;
 }
-.our-work p button {
+.our-work p button,
+.btn-container button {
   background-color: var(--color-black);
   border: 1px solid var(--color-white);
   border-radius: 0.5rem;
@@ -289,37 +290,10 @@ main {
   padding: 0.25rem 0.5rem;
   transition: all 0.3s ease-in-out;
 }
-.our-work p button:hover {
+.our-work p button:hover,
+.btn-container button:hover {
   transform: scale(1.1);
 }
-
-/********** Swiper/Slider Buttons **********/
-/* .swiper-button-next,
-.swiper-button-prev {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  height: var(--size-2);
-  margin-top: 0;
-  padding: var(--size-2);
-  width: var(--size-2);
-}
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  color: var(--color-white);
-  font-size: var(--size-2);
-}
-.swiper-button-next {
-  transform: translate(50%, -50%);
-  right: calc((100% - var(--swiper-width)) / 2);
-}
-.swiper-button-prev {
-  transform: translate(-50%, -50%);
-  left: calc((100% - var(--swiper-width)) / 2);
-}
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  background-color: rgba(0, 0, 0, 1);
-} */
 /************************************************* FOOTER *************************************************/
 footer {
   background-color: var(--color-black);
@@ -332,7 +306,7 @@ footer h3 {
   font-size: 2.5rem;
   font-weight: var(--font300);
   position: absolute;
-  top: 0.5rem;
+  top: 1rem;
 }
 footer p {
   font-size: 1.5rem;
@@ -352,7 +326,7 @@ footer p {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin: 3rem 0 2rem 0;
+  margin: 3.5rem 0 2rem 0;
 }
 .contact-us-container .strong {
   font-size: 1.5rem;
@@ -400,10 +374,99 @@ footer p {
 .social-medias-container a:hover {
   transform: scale(1.1);
 }
-/************************************************* Messages *************************************************/
-#copied {
+/************************************************* Contact Us Form *************************************************/
+.form-container {
+  border: none;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-black);
+  border-radius: 0.5rem;
+  color: var(--color-white);
+  padding: 1.5rem 2rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-white);
+}
+.individual-info p,
+.message-container p {
+  font-size: 1.5rem;
+  font-weight: var(--font500);
+  font-family: inherit;
+}
+/********** Inputs **********/
+.individual-info {
+  margin-bottom: 0.5rem;
+}
+form .input {
+  display: flex;
+  flex-direction: column;
+}
+form .input input {
+  border: none;
+  background-color: transparent;
+  color: var(--color-white);
+  font-size: 1rem;
+  border-bottom: 1px solid var(--color-white);
+  padding: 0.25rem 0 0.25rem 0.5rem;
+  font-weight: var(--font-500);
+}
+.form-container form input:focus {
+  outline: none;
+}
+form input.error {
+  border-bottom: 1px solid red;
+}
+.form-container form .invalid {
+  color: red;
+  font-size: 1rem;
+  font-weight: var(--font300);
+  padding-left: 0.5rem;
+}
+/********** Textarea **********/
+.message-container {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+.textarea-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0 0.5rem 0;
+}
+.message-container textarea {
+  resize: none;
+  color: var(--color-white);
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: transparent;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--color-white);
+}
+.message-container textarea:focus {
+  outline: none;
+}
+.message-container textarea.error {
+  border: 1px solid red;
+}
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+.btn-container button {
+  background-color: #24fe41;
+  border: 1px solid var(--color-white);
+  flex-basis: 100%;
+  border: none;
+}
+/************************************************* Message *************************************************/
+#toast {
   visibility: hidden;
-  margin-left: -145px;
+  transform: translate(-50%, -50%);
   background-color: #24fe41;
   color: var(--color-white);
   text-align: center;
@@ -411,10 +474,10 @@ footer p {
   position: fixed;
   z-index: 3;
   left: 50%;
-  bottom: 6rem;
+  bottom: 5rem;
   font-size: 1.25rem;
 }
-#copied.show {
+#toast.show {
   visibility: visible;
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
@@ -425,13 +488,13 @@ footer p {
     opacity: 0;
   }
   to {
-    bottom: 6rem;
+    bottom: 5rem;
     opacity: 1;
   }
 }
 @keyframes fadeout {
   from {
-    bottom: 6rem;
+    bottom: 5rem;
     opacity: 1;
   }
   to {
@@ -440,88 +503,30 @@ footer p {
   }
 }
 
-/* .submit-form-container {
-  align-items: center;
-  height: auto;
-  position: relative;
-  width: 80%;
-  float: right;
+/********** Swiper/Slider Buttons **********/
+/* .swiper-button-next,
+.swiper-button-prev {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  height: var(--size-2);
+  margin-top: 0;
+  padding: var(--size-2);
+  width: var(--size-2);
 }
-.info-message-container {
-  float: right;
-  width: 60%;
-}
-.info-message-container form {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  margin-top: var(--size-1);
-}
-.info-container {
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-}
-.info-container input {
-  border: none;
-  background-color: transparent;
+.swiper-button-next::after,
+.swiper-button-prev::after {
   color: var(--color-white);
-  font-size: var(--size-1);
-  width: 100%;
-  margin-left: var(--size-1);
-  border-bottom: 1px solid var(--color-white);
-  padding: 0.2rem;
-  font-weight: var(--font-500);
-  margin-top: 0.4rem;
+  font-size: var(--size-2);
 }
-.info-container input:focus {
-  outline: none;
+.swiper-button-next {
+  transform: translate(50%, -50%);
+  right: calc((100% - var(--swiper-width)) / 2);
 }
-.info-container input.error {
-  border-bottom: 1px solid red;
+.swiper-button-prev {
+  transform: translate(-50%, -50%);
+  left: calc((100% - var(--swiper-width)) / 2);
 }
-.info-container input::placeholder,
-.message-container textarea::placeholder {
-  opacity: 0.5;
-}
-.message-container {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  width: auto;
-  margin-left: var(--size-3);
-}
-.message-container textarea {
-  resize: none;
-  margin-top: 0.8rem;
-  border: var(--color-white) 1px solid;
-  color: var(--color-white);
-  font-size: var(--size-1);
-  font-family: var(--font);
-  background-color: transparent;
-  padding: 0.5rem;
-}
-.message-container textarea:focus {
-  outline: none;
-}
-.message-container textarea.error {
-  border: 1px solid red;
-}
-.btn-container {
-  display: flex;
-  width: 100%;
-  margin-top: var(--size-1);
-  align-items: center;
-  justify-content: flex-end;
-}
-.btn-container .btn {
-  cursor: pointer;
-  font-size: var(--size-1);
-  background: transparent;
-  color: var(--color-white);
-}
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgba(0, 0, 0, 1);
 } */

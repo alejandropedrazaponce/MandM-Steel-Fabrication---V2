@@ -35,7 +35,6 @@
         <nav class="nav">
           <ul>
             <li><a id="home-btn">Home</a></li>
-            <li><a id="about-btn">About us</a></li>
             <li><a id="work-btn">Our work</a></li>
             <li><a id="contact-btn">Contact us</a></li>
           </ul>
@@ -44,7 +43,71 @@
     </header>
 
     <main>
-      <p>hello</p>
+      <div class="form-container">
+        <form
+          action="https://sheetdb.io/api/v1/tz02ofoiz3xgc"
+          method="POST"
+          id="sheetdb-form"
+        >
+          <div class="info-container">
+            <div class="individual-info">
+              <p>Name</p>
+              <div class="input">
+                <input
+                  name="data[name]"
+                  type="text"
+                  placeholder="Required"
+                  id="name"
+                  required
+                />
+              </div>
+              <span class="invalid name"></span>
+            </div>
+            <div class="individual-info">
+              <p>Number</p>
+              <div class="input">
+                <input
+                  name="data[number]"
+                  type="text"
+                  placeholder="xxx-xxx-xxxx"
+                  id="number"
+                  required
+                />
+              </div>
+              <span class="invalid number"></span>
+            </div>
+            <div class="individual-info">
+              <p>Email</p>
+              <div class="input">
+                <input
+                  name="data[email]"
+                  type="text"
+                  placeholder="your-email@email.com"
+                  id="user-email"
+                  required
+                />
+              </div>
+              <span class="invalid email"></span>
+            </div>
+          </div>
+          <div class="message-container">
+            <p>Message</p>
+            <div class="textarea-container">
+              <textarea
+                name="data[message]"
+                rows="7"
+                cols="50"
+                placeholder="How can we help you?"
+              ></textarea>
+              <span class="invalid message"></span>
+            </div>
+            <div class="btn-container">
+              <button type="submit" class="form-btn">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </main>
+    <div id="toast"></div>
   </body>
 </html>
