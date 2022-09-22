@@ -10,7 +10,7 @@ const swiper = new Swiper(".swiper", {
   },
   centeredSlides: true,
   navigation: {
-    netoasttEl: ".swiper-button-netoastt",
+    nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
 });
@@ -73,4 +73,14 @@ toCopyText.forEach((item) => {
 const contactBtn = document.querySelector("#contact-btn");
 contactBtn.addEventListener("click", () => {
   window.open("contact.html", "_self");
+});
+
+/**
+ * @description - When the user clicks on the "Our work," the page goes to our-work.html
+ */
+const ourWorkBtns = document.querySelectorAll("#work-btns");
+ourWorkBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    window.open("our-work.html", "_self");
+  });
 });

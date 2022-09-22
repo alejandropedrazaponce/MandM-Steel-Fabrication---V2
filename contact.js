@@ -11,11 +11,19 @@ homeBtns.forEach((btn) => {
 });
 
 /**
- * @description - When the user "Contact us," the page goes to the contact section
+ * @description - When the user click on the "Contact us," the page goes to contact.html
  */
 const contactBtn = document.querySelector("#contact-btn");
 contactBtn.addEventListener("click", () => {
   window.open("contact.html", "_self");
+});
+
+/**
+ * @description - When the user clicks on the "Our work," the page goes to our-work.html
+ */
+const ourWorkBtn = document.querySelector("#work-btn");
+ourWorkBtn.addEventListener("click", () => {
+  window.open("our-work.html", "_self");
 });
 
 /**

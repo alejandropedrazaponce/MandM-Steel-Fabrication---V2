@@ -301,6 +301,7 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
+  border-top: 1px solid var(--color-white);
 }
 footer h3 {
   font-size: 2.5rem;
@@ -373,6 +374,19 @@ footer p {
 }
 .social-medias-container a:hover {
   transform: scale(1.1);
+}
+/************************************************* Our Work Page *************************************************/
+#our-work-page {
+  padding-bottom: 3rem;
+}
+#our-work h3 {
+  margin: 1rem 0 3rem 0;
+}
+.swiper p {
+  color: var(--color-white);
+  font-size: 2rem;
+  font-weight: var(--font500);
+  padding: 0 2rem;
 }
 /************************************************* Contact Us Form *************************************************/
 .form-container {
@@ -539,30 +553,3 @@ form input.error {
     opacity: 0;
   }
 }
-/********** Swiper/Slider Buttons **********/
-/* .swiper-button-next,
-.swiper-button-prev {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  height: var(--size-2);
-  margin-top: 0;
-  padding: var(--size-2);
-  width: var(--size-2);
-}
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  color: var(--color-white);
-  font-size: var(--size-2);
-}
-.swiper-button-next {
-  transform: translate(50%, -50%);
-  right: calc((100% - var(--swiper-width)) / 2);
-}
-.swiper-button-prev {
-  transform: translate(-50%, -50%);
-  left: calc((100% - var(--swiper-width)) / 2);
-}
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  background-color: rgba(0, 0, 0, 1);
-} */
