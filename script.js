@@ -48,7 +48,7 @@ const fitoastHeader = () => {
 
 window.addEventListener("scroll", fitoastHeader);
 
-//if location is root or index.html run this
+//if location deoes not include contact.html
 if (!window.location.href.includes("contact.html")) {
   /**
    * @description - Third party library to handle the Swiper Slider
@@ -86,6 +86,7 @@ if (!window.location.href.includes("contact.html")) {
   });
 }
 
+//if location deoes include contact.html
 if (window.location.href.includes("contact.html")) {
   /**
    * @description - When the user clicks on the submit button, the form will be validated
