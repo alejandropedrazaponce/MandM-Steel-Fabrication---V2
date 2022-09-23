@@ -92,6 +92,12 @@ if (window.location.href.includes("index.html")) {
 
 if (window.location.href.includes("contact.html")) {
   /**
+   * @description - Reduces the size of the header
+   */
+  const header = document.querySelector("header");
+  header.classList.add("active");
+
+  /**
    * @description - When the user clicks on the submit button, the form will be validated
    */
   const inputs = document.querySelectorAll("input");

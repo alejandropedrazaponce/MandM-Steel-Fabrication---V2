@@ -83,7 +83,7 @@ header.active {
   flex-basis: 100%;
 }
 .nav ul li a {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: var(--font500);
   text-decoration: none;
   display: block;
@@ -138,11 +138,11 @@ main {
   width: 100%;
 }
 .text-quote-container h1 {
-  font-size: 8rem;
+  font-size: 10rem;
 }
 .text-quote-container p {
-  font-size: 2em;
-  font-weight: var(--font-300);
+  font-size: 2rem;
+  font-weight: var(--font300);
   padding: 2rem;
 }
 /********** Main Page Background**********/
@@ -167,7 +167,7 @@ main {
 .about-container > * + * {
   margin-top: 1rem;
 }
-.about-container h3 {
+.about-container h2 {
   font-size: 4rem;
   font-weight: var(--font300);
 }
@@ -176,10 +176,6 @@ main {
   font-size: 1.5rem;
   font-weight: var(--font300);
   line-height: 2rem;
-}
-.about-container span {
-  font-weight: var(--font500);
-  font-size: 2.5rem;
 }
 .about-container ul {
   column-count: 2;
@@ -190,40 +186,25 @@ main {
   list-style: circle;
   display: list-item;
 }
-/********** Divider **********/
-.div-container {
-  padding: 35px 0 35px 0;
-  position: relative;
-  width: 100%;
-}
-.divider {
-  background: linear-gradient(
-      to right,
-      transparent,
-      transparent,
-      var(--color-white),
-      var(--color-white),
-      var(--color-white),
-      transparent,
-      transparent
-    )
-    left bottom transparent no-repeat;
-  padding: 1px;
-  margin: 0 auto;
-  width: 100%;
-}
 /********** Our Work/Swiper Container **********/
-.our-work {
+.our-work-swiper-container {
+  padding-bottom: 3rem;
+}
+.our-work-swiper-container .our-work-title {
   align-items: center;
   display: flex;
   height: 100%;
   justify-content: center;
   position: relative;
 }
-.our-work h3 {
+.our-work-swiper-container h2 {
   font-size: 4rem;
   font-weight: var(--font300);
-  margin-bottom: 1rem;
+}
+.our-work-swiper-container .swiper-container p {
+  font-size: 2rem;
+  font-weight: var(--font500);
+  padding: 2rem 0 0 2rem;
 }
 /********** Our Work Swiper **********/
 .swiper-container {
@@ -280,9 +261,9 @@ footer {
   width: 100%;
   border-top: 1px solid var(--color-white);
 }
-footer h3 {
-  font-size: 2.5rem;
-  font-weight: var(--font300);
+footer h2 {
+  font-size: 2rem;
+  font-weight: var(--font500);
   position: absolute;
   top: 1rem;
 }
@@ -307,7 +288,6 @@ footer p {
   margin: 3.5rem 0 2rem 0;
 }
 .contact-us-container .strong {
-  font-size: 1.5rem;
   font-weight: var(--font500);
 }
 .call-email {
@@ -352,28 +332,15 @@ footer p {
 .social-medias-container a:hover {
   transform: scale(1.1);
 }
-/************************************************* Our Work Page *************************************************/
-#our-work-page {
-  padding-bottom: 3rem;
-}
-#our-work h3 {
-  margin: 1rem 0 3rem 0;
-}
-.swiper p {
-  color: var(--color-white);
-  font-size: 2rem;
-  font-weight: var(--font500);
-  padding: 0 2rem;
-}
 /************************************************* Contact Us Form *************************************************/
 .form-container {
   border: none;
   position: absolute;
   left: 50%;
-  top: 60%;
+  top: 55%;
   transform: translate(-50%, -50%);
   background-color: var(--color-black);
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   color: var(--color-white);
   padding: 1.5rem 2rem 0 2rem;
   display: flex;
@@ -435,6 +402,7 @@ form input.error {
   padding: 0.5rem;
   border-radius: 0.25rem;
   border: 1px solid var(--color-white);
+  font-family: inherit;
 }
 .message-container textarea:focus {
   outline: none;
@@ -450,9 +418,39 @@ form input.error {
 }
 .btn-container button {
   background-color: #24fe41;
-  border: 1px solid var(--color-white);
   flex-basis: 100%;
   border: none;
+  font-size: 1.5rem;
+  font-weight: var(--font500);
+  color: var(--color-white);
+  border-radius: 0.25rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.btn-container button:hover {
+  transform: scale(1.1);
+}
+/************************************************* Divider *************************************************/
+.div-container {
+  padding: 35px 0 35px 0;
+  position: relative;
+  width: 100%;
+}
+.divider {
+  background: linear-gradient(
+      to right,
+      transparent,
+      transparent,
+      var(--color-white),
+      var(--color-white),
+      var(--color-white),
+      transparent,
+      transparent
+    )
+    left bottom transparent no-repeat;
+  padding: 1px;
+  margin: 0 auto;
+  width: 100%;
 }
 /************************************************* Message *************************************************/
 #toast {
