@@ -33,6 +33,7 @@ const fitoastHeader = () => {
   }
 };
 window.addEventListener("scroll", fitoastHeader);
+
 /**
  * @description - When the user clicks on the home button or logo, the page will reload
  * and scroll to the top
@@ -43,6 +44,23 @@ homeBtns.forEach((btn) => {
     window.location.href = "index.html";
     window.scrollTo(0, 0);
   });
+});
+
+/**
+ * @description - When the user clicks on the "Our work," the page goes the our-work-divider
+ */
+const ourWorkBt = document.querySelector("#work-btn");
+const ourWorkDiv = document.querySelector("#our-work-divider");
+ourWorkBt.addEventListener("click", () => {
+  window.scrollTo(0, ourWorkDiv.offsetTop);
+});
+
+/**
+ * @description - When the user "Contact us," the page goes to the contact section
+ */
+const contactBtn = document.querySelector("#contact-btn");
+contactBtn.addEventListener("click", () => {
+  window.open("contact.html", "_self");
 });
 
 /**
@@ -64,23 +82,5 @@ toCopyText.forEach((item) => {
     setTimeout(function () {
       toast.className = toast.className.replace("show", "");
     }, 3000);
-  });
-});
-
-/**
- * @description - When the user "Contact us," the page goes to the contact section
- */
-const contactBtn = document.querySelector("#contact-btn");
-contactBtn.addEventListener("click", () => {
-  window.open("contact.html", "_self");
-});
-
-/**
- * @description - When the user clicks on the "Our work," the page goes to our-work.html
- */
-const ourWorkBtns = document.querySelectorAll("#work-btns");
-ourWorkBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    window.open("our-work.html", "_self");
   });
 });

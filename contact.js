@@ -11,19 +11,21 @@ homeBtns.forEach((btn) => {
 });
 
 /**
- * @description - When the user click on the "Contact us," the page goes to contact.html
+ * @description - When the user clicks on the "Our work," the page goes the our-work-divider
+ */
+const ourWorkBt = document.querySelector("#work-btn");
+const ourWorkDiv = document.querySelector("#our-work-divider");
+ourWorkBt.addEventListener("click", () => {
+  //open index.html and scroll to the our-work-divider
+  window.location.href = "index.html#our-work-divider";
+});
+
+/**
+ * @description - When the user "Contact us," the page goes to the contact section
  */
 const contactBtn = document.querySelector("#contact-btn");
 contactBtn.addEventListener("click", () => {
   window.open("contact.html", "_self");
-});
-
-/**
- * @description - When the user clicks on the "Our work," the page goes to our-work.html
- */
-const ourWorkBtn = document.querySelector("#work-btn");
-ourWorkBtn.addEventListener("click", () => {
-  window.open("our-work.html", "_self");
 });
 
 /**
