@@ -127,9 +127,8 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.3;
-  width: 100%;
-  height: 75vh;
-  width: auto;
+  width: 800px;
+  height: 600px;
 }
 .text-quote-container {
   position: absolute;
@@ -146,7 +145,7 @@ main {
   font-weight: var(--font300);
   padding: 2rem;
 }
-/********** Main Page Background**********/
+/********** Main Page Background **********/
 .gradient {
   background: rgb(0, 0, 0);
   background: linear-gradient(
@@ -228,6 +227,7 @@ main {
   transform: scale(0.8);
   transition: all 0.3s ease-in-out;
   width: var(--swiper-width);
+  cursor: pointer;
 }
 .swiper-slide.swiper-slide-active {
   opacity: 1 !important;
