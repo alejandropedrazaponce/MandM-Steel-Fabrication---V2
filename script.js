@@ -49,10 +49,7 @@ const fitoastHeader = () => {
 window.addEventListener("scroll", fitoastHeader);
 
 //if location is root or index.html run this
-if (
-  window.location.href.includes("index.html") ||
-  !window.location.href.includes("contact.html")
-) {
+if (!window.location.href.includes("contact.html")) {
   /**
    * @description - Third party library to handle the Swiper Slider
    */
