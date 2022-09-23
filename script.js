@@ -61,10 +61,6 @@ if (!window.location.href.includes("contact.html")) {
       disableOnInteraction: false,
     },
     centeredSlides: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
   });
 
   /**
