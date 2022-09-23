@@ -28,10 +28,30 @@ contactBtn.addEventListener("click", () => {
   window.open("contact.html", "_self");
 });
 
-//if location is index.html tun this
+/**
+ * @description - When the user scrolls the page, the header and footer resizes
+ */
+const header = document.querySelector("header");
+const imgContainer = document.querySelector(".img-container");
+const fitoastHeader = () => {
+  if (window.scrollY > 100) {
+    header.classList.add("active");
+    imgContainer.style.width = "15%";
+    imgContainer.style.transition = "all 0.4s";
+  } else {
+    header.classList.remove("active");
+    header.style.transition = "all 0.5s";
+    imgContainer.style.width = "25%";
+    imgContainer.style.transition = "all 0.4s";
+  }
+};
+
+window.addEventListener("scroll", fitoastHeader);
+
+//if location is root or index.html run this
 if (
   window.location.href.includes("index.html") ||
-  window.location.href === "/"
+  !window.location.href.includes("contact.html")
 ) {
   /**
    * @description - Third party library to handle the Swiper Slider
@@ -49,26 +69,6 @@ if (
       prevEl: ".swiper-button-prev",
     },
   });
-
-  /**
-   * @description - When the user scrolls the page, the header and footer resizes
-   */
-  const header = document.querySelector("header");
-  const imgContainer = document.querySelector(".img-container");
-  const fitoastHeader = () => {
-    if (window.scrollY > 100) {
-      header.classList.add("active");
-      imgContainer.style.width = "15%";
-      imgContainer.style.transition = "all 0.4s";
-    } else {
-      header.classList.remove("active");
-      header.style.transition = "all 0.5s";
-      imgContainer.style.width = "25%";
-      imgContainer.style.transition = "all 0.4s";
-    }
-  };
-
-  window.addEventListener("scroll", fitoastHeader);
 
   /**
    * @description - When the user clicks on the email or phone number, they are copied to the
@@ -94,12 +94,6 @@ if (
 }
 
 if (window.location.href.includes("contact.html")) {
-  /**
-   * @description - Reduces the size of the header
-   */
-  const header = document.querySelector("header");
-  header.classList.add("active");
-
   /**
    * @description - When the user clicks on the submit button, the form will be validated
    */

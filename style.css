@@ -43,7 +43,8 @@ header {
   width: 100%;
   z-index: 2;
 }
-header.active {
+header.active,
+.header-contactus {
   height: var(--sticky-top);
 }
 .logo-container,
