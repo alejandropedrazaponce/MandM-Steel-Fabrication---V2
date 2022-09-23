@@ -29,7 +29,10 @@ contactBtn.addEventListener("click", () => {
 });
 
 //if location is index.html tun this
-if (window.location.href.includes("index.html")) {
+if (
+  window.location.href.includes("index.html") ||
+  window.location.href === "/"
+) {
   /**
    * @description - Third party library to handle the Swiper Slider
    */
