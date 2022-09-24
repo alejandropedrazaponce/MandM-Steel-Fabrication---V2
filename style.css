@@ -361,6 +361,7 @@ footer p {
 form .input {
   display: flex;
   flex-direction: column;
+  border: none;
 }
 form .input input {
   border: none;
