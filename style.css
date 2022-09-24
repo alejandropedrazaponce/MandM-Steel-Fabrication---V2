@@ -6,20 +6,21 @@
   --color-black: #000000;
   --color-white: #ffffff;
 
-  /* Measurements */
+  /* Header height */
   --top: 22vh;
   --sticky-top: 10vh;
+  --top-phone-tablet: 12vh;
+  --sticky-top-phone-tablet: 6vh;
 
   /* Font-weight */
   --font300: 300;
   --font500: 500;
 
   /* Swiper */
-  --swiper-image-ratio: 100%; /* ratio 16:9 = 56.25% */
+  --swiper-image-ratio: 100%;
   --swiper-width: 30%;
   --swiper-inactive-scale: 8.5; /* makes the other slide smaller */
-  --swiper-mobile-width: 90%; /* mobile */
-  --swiper-mobile-inactive-scale: 0.95; /* mobile*/
+  --swiper-width-phone: 60%;
 }
 /************************************************* GENERAL SETTINGS  *************************************************/
 * {
@@ -31,6 +32,7 @@ body {
   background-color: var(--color-black);
   font-family: "Rubik", sans-serif;
   color: var(--color-white);
+  overflow-x: hidden;
 }
 /************************************************* HEADER *************************************************/
 header {
@@ -44,22 +46,20 @@ header {
   z-index: 2;
 }
 header.active,
-.header-contactus {
+.header-contact-us {
   height: var(--sticky-top);
 }
-.logo-container,
-.nav-container {
+/********** Logo **********/
+.logo-container {
   flex: 1;
-  align-items: center;
   display: flex;
   position: relative;
-  padding: 0.5rem;
 }
-/********** Logo **********/
 .logo-container .img-container {
   height: 100%;
   width: 100%;
-  flex-basis: 40%;
+  flex-basis: 100%;
+  padding: 0.5rem;
 }
 .logo-container .img-container img {
   height: 100%;
@@ -70,10 +70,13 @@ header.active,
 /********** Nav **********/
 .nav-container {
   justify-content: flex-end;
+  flex: 5;
+  display: flex;
+  position: relative;
 }
 .nav {
   display: flex;
-  flex-basis: 80%;
+  flex-basis: 50%;
   align-items: center;
   height: 100%;
 }
@@ -186,7 +189,7 @@ main {
   list-style: circle;
   display: list-item;
 }
-/********** Our Work/Swiper Container **********/
+/********** Our Work **********/
 .our-work-swiper-container {
   padding-bottom: 2rem;
 }
@@ -206,7 +209,7 @@ main {
   font-weight: var(--font500);
   padding: 2rem 0 0 2rem;
 }
-/********** Our Work Swiper **********/
+/********** Swiper **********/
 .swiper-container {
   align-items: center;
   display: flex;
@@ -332,20 +335,18 @@ footer p {
 .social-medias-container a:hover {
   transform: scale(1.1);
 }
-/************************************************* Contact Us Form *************************************************/
+/************************************************* CONTACT US FORM *************************************************/
 .form-container {
-  border: none;
-  position: absolute;
-  left: 50%;
-  top: 55%;
-  transform: translate(-50%, -50%);
-  background-color: var(--color-black);
-  border-radius: 0.25rem;
-  color: var(--color-white);
-  padding: 1.5rem 2rem 0 2rem;
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--color-white);
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.form-container form {
+  width: 80%;
 }
 .individual-info p,
 .message-container p {
@@ -413,12 +414,12 @@ form input.error {
 .btn-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-bottom: 1rem;
+  justify-content: flex-end;
+  padding: 1rem;
 }
 .btn-container button {
   background-color: #24fe41;
-  flex-basis: 100%;
+  flex-basis: 10%;
   border: none;
   font-size: 1.5rem;
   font-weight: var(--font500);
@@ -426,13 +427,14 @@ form input.error {
   border-radius: 0.25rem;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  padding: 0.5rem;
 }
 .btn-container button:hover {
   transform: scale(1.1);
 }
-/************************************************* Divider *************************************************/
+/************************************************* DIVIDER *************************************************/
 .div-container {
-  padding: 35px 0 35px 0;
+  padding: 1rem 0 1rem 0;
   position: relative;
   width: 100%;
 }
@@ -452,7 +454,7 @@ form input.error {
   margin: 0 auto;
   width: 100%;
 }
-/************************************************* Message *************************************************/
+/************************************************* MESSAGE *************************************************/
 #toast {
   visibility: hidden;
   transform: translate(-50%, -50%);
@@ -527,4 +529,132 @@ form input.error {
     top: 0;
     opacity: 0;
   }
+}
+/********************************************************************** SMARTPHONE MEDIA QUERY **********************************************************************/
+@media (min-width: 320px) and (max-width: 480px) {
+  html {
+    overflow-x: hidden;
+  }
+  /************************************************* HEADER *************************************************/
+  header {
+    height: var(--top-phone-tablet);
+  }
+  header.active {
+    height: var(--sticky-top-phone-tablet);
+  }
+  /********** Logo **********/
+  .logo-container {
+    flex: 1;
+  }
+  /********** Nav **********/
+  .nav {
+    flex-basis: 100%;
+  }
+  .nav ul li a {
+    font-size: 1rem;
+  }
+  /************************************************* MAIN *************************************************/
+  main {
+    margin-top: var(--top-phone-tablet);
+  }
+  /********** Image and Quote **********/
+  .img-quote-container img {
+    width: 100%;
+    height: auto;
+  }
+  .text-quote-container h1 {
+    font-size: 4rem;
+  }
+  .text-quote-container p {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+  /********** About Section **********/
+  .about-container {
+    padding: 0 1.5rem 0 1.5rem;
+  }
+  .about-container > * + * {
+    margin-top: 0.25rem;
+  }
+  .about-container h2 {
+    font-size: 2rem;
+  }
+  .about-container p,
+  .about-container ul {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  .about-container ul {
+    column-gap: 3rem;
+  }
+  /********** Our Work **********/
+  .our-work-swiper-container h2 {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+  }
+  .our-work-swiper-container .swiper-container p {
+    font-size: 1rem;
+    padding: 0.5rem 0 1rem 1rem;
+  }
+  /********** Swiper **********/
+  .swiper-slide {
+    width: var(--swiper-width-phone);
+  }
+  /************************************************* FOOTER *************************************************/
+  footer {
+    flex-direction: column;
+  }
+  footer h2 {
+    font-size: 1.5rem;
+    position: relative;
+    top: 0.5rem;
+  }
+  footer p {
+    font-size: 1rem;
+  }
+  /********** Contact Us Section **********/
+  .contact-us {
+    margin: 0.5rem 0 0.5rem 0;
+  }
+  .call-email {
+    margin-top: 0.5rem;
+  }
+  /********** Follow Us Section **********/
+  .follow-us-container {
+    padding-bottom: 1rem;
+  }
+  .social-medias-container {
+    margin-top: 0.5rem;
+  }
+  .social-medias-container a {
+    font-size: 3rem;
+  }
+  /************************************************* CONTACT US FORM *************************************************/
+  .individual-info p,
+  .message-container p {
+    font-size: 1rem;
+  }
+  /********** Textarea **********/
+  .btn-container button {
+    font-size: 1rem;
+  }
+  /************************************************* MESSAGE *************************************************/
+  #toast {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  /********** Contact Us toast **********/
+  #toast-sent {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+/********************************************************************** TABLET MEDIA QUERY **********************************************************************/
+@media (min-width: 481px) and (max-width: 768px) {
+}
+/********************************************************************** LAPTOP MEDIA QUERY **********************************************************************/
+@media (min-width: 769px) and (max-width: 1024px) {
+}
+/********************************************************************** Desktops MEDIA QUERY **********************************************************************/
+@media (min-width: 1025px) and (max-width: 1200px) {
 }

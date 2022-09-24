@@ -14,10 +14,8 @@ homeBtns.forEach((btn) => {
  * @description - When the user clicks on the "Our work," the page goes the our-work-divider
  */
 const ourWorkBt = document.querySelector("#work-btn");
-const ourWorkDiv = document.querySelector("#our-work-divider");
 ourWorkBt.addEventListener("click", () => {
-  //open index.html and scroll to the our-work-divider
-  window.location.href = "index.html#our-work-divider";
+  window.location.href = "index.html#our-work-spacer";
 });
 
 /**
