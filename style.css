@@ -587,7 +587,7 @@ form input.error {
     line-height: 1.5rem;
   }
   .about-container ul {
-    column-gap: 3rem;
+    column-gap: 2rem;
   }
   /********** Our Work **********/
   .our-work-swiper-container h2 {
@@ -653,6 +653,130 @@ form input.error {
 }
 /********************************************************************** TABLET MEDIA QUERY **********************************************************************/
 @media (min-width: 481px) and (max-width: 768px) {
+  html {
+    overflow-x: hidden;
+  }
+  /************************************************* HEADER *************************************************/
+  header {
+    height: var(--top-phone-tablet);
+  }
+  header.active {
+    height: var(--sticky-top-phone-tablet);
+  }
+  /********** Logo **********/
+  .logo-container {
+    flex: 1.5;
+  }
+  /********** Nav **********/
+  .nav {
+    flex-basis: 100%;
+  }
+  .nav ul li a {
+    font-size: 1.5rem;
+  }
+  main {
+    margin-top: var(--top-phone-tablet);
+  }
+  /********** Image and Quote **********/
+  .img-quote-container img {
+    width: 100%;
+    height: auto;
+  }
+  .text-quote-container h1 {
+    font-size: 5rem;
+  }
+  .text-quote-container p {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+  /********** About Section **********/
+  .about-container {
+    padding: 0 1.5rem 0 1.5rem;
+  }
+  .about-container > * + * {
+    margin-top: 0.5rem;
+  }
+  .about-container h2 {
+    font-size: 3rem;
+  }
+  .about-container p,
+  .about-container ul {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .about-container ul {
+    column-gap: 2rem;
+  }
+  /********** Our Work **********/
+  .our-work-swiper-container h2 {
+    font-size: 3rem;
+    padding-bottom: 1rem;
+  }
+  .our-work-swiper-container .swiper-container p {
+    font-size: 1.5rem;
+    padding: 0.5rem 0 1rem 1rem;
+  }
+  /********** Swiper **********/
+  .swiper-slide {
+    width: var(--swiper-width-phone);
+  }
+  /************************************************* FOOTER *************************************************/
+  footer h2 {
+    font-size: 1.5rem;
+    font-weight: var(--font500);
+    position: absolute;
+    top: 0.5rem;
+  }
+  footer p {
+    font-size: 1rem;
+  }
+  .contact-us-container,
+  .follow-us-container {
+    padding-top: 2rem;
+  }
+  /********** Contact Us Section **********/
+  .contact-us {
+    margin: 0.5rem 0 0.5rem 0;
+  }
+  .call-email {
+    margin-top: 0.5rem;
+  }
+  /********** Follow Us Section **********/
+  .follow-us-container {
+    padding-bottom: 1rem;
+  }
+  .social-medias-container {
+    margin-top: 1rem;
+  }
+  .social-medias-container a {
+    font-size: 3.5rem;
+  }
+  /************************************************* CONTACT US FORM *************************************************/
+  .individual-info p,
+  .message-container p {
+    font-size: 1.5rem;
+  }
+  /********** Input **********/
+  form .input input {
+    font-size: 1.5rem;
+  }
+  /********** Textarea **********/
+  .message-container textarea {
+    font-size: 1.5rem;
+  }
+  .btn-container button {
+    font-size: 1.5rem;
+  }
+  /************************************************* MESSAGE *************************************************/
+  #toast {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  /********** Contact Us toast **********/
+  #toast-sent {
+    padding: 1rem;
+    font-size: 1rem;
+  }
 }
 /********************************************************************** LAPTOP MEDIA QUERY **********************************************************************/
 @media (min-width: 769px) and (max-width: 1024px) {
