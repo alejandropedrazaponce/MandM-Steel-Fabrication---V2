@@ -1,3 +1,5 @@
+import SheetDB from "sheetdb-js";
+
 /**
  * @description - When the user clicks on the home button or logo, the page will reload
  * and scroll to the top
