@@ -18,9 +18,9 @@
 
   /* Swiper */
   --swiper-image-ratio: 100%;
-  --swiper-width: 30%;
-  --swiper-inactive-scale: 8.5; /* makes the other slide smaller */
-  --swiper-width-phone: 60%;
+  --swiper-width: 50%;
+  --swiper-inactive-scale: 8.5;
+  --swiper-width-phone: 40%;
 }
 /************************************************* GENERAL SETTINGS  *************************************************/
 * {
@@ -537,7 +537,7 @@ form input.error {
   html {
     overflow-x: hidden;
   }
-  /************************************************* HEADER *************************************************/
+  /********** HEADER **********/
   header {
     height: var(--top-phone-tablet);
   }
@@ -555,7 +555,7 @@ form input.error {
   .nav ul li a {
     font-size: 1rem;
   }
-  /************************************************* MAIN *************************************************/
+  /********** MAIN **********/
   main {
     margin-top: var(--top-phone-tablet);
   }
@@ -602,7 +602,7 @@ form input.error {
   .swiper-slide {
     width: var(--swiper-width-phone);
   }
-  /************************************************* FOOTER *************************************************/
+  /********** FOOTER **********/
   footer {
     flex-direction: column;
   }
@@ -631,7 +631,7 @@ form input.error {
   .social-medias-container a {
     font-size: 3rem;
   }
-  /************************************************* CONTACT US FORM *************************************************/
+  /********** CONTACT US FROM **********/
   .individual-info p,
   .message-container p {
     font-size: 1rem;
@@ -640,7 +640,7 @@ form input.error {
   .btn-container button {
     font-size: 1rem;
   }
-  /************************************************* MESSAGE *************************************************/
+  /********** MESSAGE **********/
   #toast {
     padding: 1rem;
     font-size: 1rem;
@@ -656,7 +656,7 @@ form input.error {
   html {
     overflow-x: hidden;
   }
-  /************************************************* HEADER *************************************************/
+  /********** HEADER **********/
   header {
     height: var(--top-phone-tablet);
   }
@@ -720,7 +720,7 @@ form input.error {
   .swiper-slide {
     width: var(--swiper-width-phone);
   }
-  /************************************************* FOOTER *************************************************/
+  /********** FOOTER **********/
   footer h2 {
     font-size: 1.5rem;
     font-weight: var(--font500);
@@ -751,7 +751,7 @@ form input.error {
   .social-medias-container a {
     font-size: 3.5rem;
   }
-  /************************************************* CONTACT US FORM *************************************************/
+  /********** CONTACT US FORM **********/
   .individual-info p,
   .message-container p {
     font-size: 1.5rem;
@@ -767,7 +767,7 @@ form input.error {
   .btn-container button {
     font-size: 1.5rem;
   }
-  /************************************************* MESSAGE *************************************************/
+  /********** MESSAGE **********/
   #toast {
     padding: 1rem;
     font-size: 1rem;
@@ -780,6 +780,37 @@ form input.error {
 }
 /********************************************************************** LAPTOP MEDIA QUERY **********************************************************************/
 @media (min-width: 769px) and (max-width: 1024px) {
+  html {
+    overflow-x: hidden;
+  }
+  /********** Logo **********/
+  .logo-container {
+    flex: 2;
+  }
+  /********** Nav **********/
+  .nav {
+    flex-basis: 100%;
+  }
+  /********** Swiper **********/
+  .our-work-swiper-container .swiper-container p {
+    padding: 2rem 0 1rem 2rem;
+  }
+  /********** CONTACT US FORM **********/
+  .individual-info p,
+  .message-container p {
+    font-size: 1.5rem;
+  }
+  /********** Input **********/
+  form .input input {
+    font-size: 1.5rem;
+  }
+  /********** Textarea **********/
+  .message-container textarea {
+    font-size: 1.5rem;
+  }
+  .btn-container button {
+    font-size: 1.5rem;
+  }
 }
 /********************************************************************** Desktops MEDIA QUERY **********************************************************************/
 @media (min-width: 1025px) and (max-width: 1200px) {
