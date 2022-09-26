@@ -18,7 +18,7 @@
 
   /* Swiper */
   --swiper-image-ratio: 100%;
-  --swiper-width: 50%;
+  --swiper-width: 40%;
   --swiper-inactive-scale: 8.5;
   --swiper-width-phone: 40%;
 }
@@ -778,7 +778,7 @@ form input.error {
     font-size: 1rem;
   }
 }
-/********************************************************************** LAPTOP MEDIA QUERY **********************************************************************/
+/********************************************************************** LAPTOP/DESkTOP MEDIA QUERY **********************************************************************/
 @media (min-width: 769px) {
   html {
     overflow-x: hidden;
