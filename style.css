@@ -779,7 +779,7 @@ form input.error {
   }
 }
 /********************************************************************** LAPTOP MEDIA QUERY **********************************************************************/
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px) {
   html {
     overflow-x: hidden;
   }
@@ -811,7 +811,4 @@ form input.error {
   .btn-container button {
     font-size: 1.5rem;
   }
-}
-/********************************************************************** Desktops MEDIA QUERY **********************************************************************/
-@media (min-width: 1025px) and (max-width: 1200px) {
 }
