@@ -1,14 +1,14 @@
 # Business Website
 
-[Click here](https://www.mnmsteelfab.com/) to visit and interact with this application.
+[Click here](https://www.mnmsteelfab.com/) to visit and interact with website.
 
 ## Description
 
-This application is being built for a business. 
+This website was created for a friend's business. It counts with a swiper to display images of their work. It also counts with a "contact us" page that takes the user to a page with a form. Thanks to a third party api, the user is able to submit said form and its information goes to a Google spreadsheet. The goal was to create a webpage that was functional, fast to load, and simple for the user.  
 
 ## Dependencies
 
-Make sure you have the latest git version and the latest Visual Studio Code version
+Make sure you have the latest git version and the latest Visual Studio Code version.
 
 ## Contributing
 
@@ -26,9 +26,12 @@ Don't forget to give the project a star! Thanks again!
 ## Acknowledgments
 
 Inspiration, code snippets, etc:
+   * [Swiper API](https://swiperjs.com/)
    * [TSwipper](https://codepen.io/adityarahmanda/pen/zYjrEyd)
    * [SheetDB](https://sheetdb.io/apis)
    * [SheetDB-HTML-Example](https://codepen.io/sheetdb/pen/VwPpJqx)
+   * [Resize images to increase website performance](https://www.birme.net/?)
+   * [Resize images to increase website performance](https://tinypng.com/)
 
 ## Contact Me
 
