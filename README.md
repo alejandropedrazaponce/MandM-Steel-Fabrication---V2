@@ -27,11 +27,11 @@ Don't forget to give the project a star! Thanks again!
 
 Inspiration, code snippets, etc:
    * [Swiper API](https://swiperjs.com/)
-   * [TSwipper](https://codepen.io/adityarahmanda/pen/zYjrEyd)
-   * [SheetDB](https://sheetdb.io/apis)
-   * [SheetDB-HTML-Example](https://codepen.io/sheetdb/pen/VwPpJqx)
-   * [Resize images to increase website performance](https://www.birme.net/?)
-   * [Resize images to increase website performance](https://tinypng.com/)
+   * [Swiper Example](https://codepen.io/adityarahmanda/pen/zYjrEyd)
+   * [SheetDB API](https://sheetdb.io/apis)
+   * [SheetDB Example](https://codepen.io/sheetdb/pen/VwPpJqx)
+   * [First page to resize images to increase website performance](https://www.birme.net/?)
+   * [Second page to resize images to increase website performance](https://tinypng.com/)
 
 ## Contact Me
 
