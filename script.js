@@ -1,6 +1,6 @@
 /**
- * @description - When the user clicks on the home button or logo, the page will reload
- * and scroll to the top
+ * @description - When the user clicks on the home button or logo, the page will go to the index.html file
+ * and scroll all the way to the top
  */
 const homeBtns = document.querySelectorAll("#home-btn");
 homeBtns.forEach((btn) => {
@@ -11,7 +11,7 @@ homeBtns.forEach((btn) => {
 });
 
 /**
- * @description - When the user clicks on the "Our work," the page goes the our-work-divider
+ * @description - When the user clicks on the "Our work," the page goes the our-work-divider (our work section on the main page)
  */
 const ourWorkBt = document.querySelector("#work-btn");
 ourWorkBt.addEventListener("click", () => {
@@ -19,7 +19,8 @@ ourWorkBt.addEventListener("click", () => {
 });
 
 /**
- * @description - When the user "Contact us," the page goes to the contact section
+ * @description - When the user "Contact us," the page goes to the contact us page where there is a form to be filled
+ * and submitted
  */
 const contactBtn = document.querySelector("#contact-btn");
 contactBtn.addEventListener("click", () => {
@@ -27,7 +28,7 @@ contactBtn.addEventListener("click", () => {
 });
 
 /**
- * @description - When the user scrolls the page, the header and footer resizes
+ * @description - When the user scrolls the page, the header resizes and sticks to the top of the page
  */
 const header = document.querySelector("header");
 const imgContainer = document.querySelector(".img-container");
@@ -46,10 +47,10 @@ const fitoastHeader = () => {
 
 window.addEventListener("scroll", fitoastHeader);
 
-//if location deoes not include contact.html
+//if location DOES NOT include contact.html
 if (!window.location.href.includes("contact.html")) {
   /**
-   * @description - Third party library to handle the Swiper Slider
+   * @description - Third party library to create and display the Swiper Sliders
    */
   const swiper = new Swiper(".swiper", {
     loop: true,
@@ -63,7 +64,7 @@ if (!window.location.href.includes("contact.html")) {
 
   /**
    * @description - When the user clicks on the email or phone number, they are copied to the
-   * clipboard and notifies the user
+   * clipboard and the user is notified
    */
   const toCopyText = document.querySelectorAll(".strong");
   toCopyText.forEach((item) => {
@@ -84,10 +85,10 @@ if (!window.location.href.includes("contact.html")) {
   });
 }
 
-//if location deoes include contact.html
+//if location DOES include contact.html
 if (window.location.href.includes("contact.html")) {
   /**
-   * @description - When the user clicks on the submit button, the form will be validated
+   * @description - When the user clicks on the submit button, the form is validated
    */
   const inputs = document.querySelectorAll("input");
   const textArea = document.querySelector("textarea");
@@ -166,7 +167,7 @@ if (window.location.href.includes("contact.html")) {
   };
 
   /**
-   * @description - Helper function to validate the tetoastt area
+   * @description - Helper function to validate the textarea
    */
   const checkTextArea = (textArea) => {
     let isValid = true;
@@ -183,7 +184,7 @@ if (window.location.href.includes("contact.html")) {
   };
 
   /**
-   * @description - Success message when the form is submitted
+   * @description - Displays the success message to notify user that the form has been submitted
    */
   const successMessage = () => {
     var toast = document.getElementById("toast-sent");
@@ -195,7 +196,7 @@ if (window.location.href.includes("contact.html")) {
   };
 
   /**
-   * @description - Handles the form submission
+   * @description - Send the form to a third party service that will save the request info in a spreadsheet
    */
   const form = document.getElementById("sheetdb-form");
   const btnForm = document.querySelector(".form-btn");

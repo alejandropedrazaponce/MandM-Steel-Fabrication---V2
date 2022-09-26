@@ -20,7 +20,6 @@
   --swiper-image-ratio: 100%;
   --swiper-width: 40%;
   --swiper-inactive-scale: 8.5;
-  --swiper-width-phone: 40%;
 }
 /************************************************* GENERAL SETTINGS  *************************************************/
 * {
@@ -30,8 +29,8 @@
 }
 body {
   background-color: var(--color-black);
-  font-family: "Rubik", sans-serif;
   color: var(--color-white);
+  font-family: "Rubik", sans-serif;
   overflow-x: hidden;
 }
 /************************************************* HEADER *************************************************/
@@ -51,49 +50,49 @@ header.active,
 }
 /********** Logo **********/
 .logo-container {
-  flex: 1;
   display: flex;
+  flex: 1;
   position: relative;
 }
 .logo-container .img-container {
-  height: 100%;
-  width: 100%;
   flex-basis: 100%;
+  height: 100%;
   padding: 0.5rem;
+  width: 100%;
 }
 .logo-container .img-container img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
   cursor: pointer;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
 }
 /********** Nav **********/
 .nav-container {
-  justify-content: flex-end;
-  flex: 5;
   display: flex;
+  flex: 5;
+  justify-content: flex-end;
   position: relative;
 }
 .nav {
+  align-items: center;
   display: flex;
   flex-basis: 50%;
-  align-items: center;
   height: 100%;
 }
 .nav ul {
   display: flex;
+  flex-basis: 100%;
   justify-content: space-evenly;
   list-style: none;
-  flex-basis: 100%;
 }
 .nav ul li a {
+  cursor: pointer;
+  display: block;
   font-size: 2rem;
   font-weight: var(--font500);
-  text-decoration: none;
-  display: block;
-  position: relative;
-  cursor: pointer;
   list-style: none;
+  position: relative;
+  text-decoration: none;
 }
 .nav ul li a::after {
   background-color: var(--color-white);
@@ -118,25 +117,25 @@ main {
 /********** Image and Quote **********/
 .img-quote-container {
   align-items: center;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
   text-align: center;
-  background-color: transparent;
 }
 .img-quote-container img {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 600px;
   opacity: 0.3;
   width: 800px;
-  height: 600px;
 }
 .text-quote-container {
+  left: 50%;
   position: absolute;
   top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
 }
@@ -163,9 +162,9 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
   padding: 1rem 5rem 0 5rem;
   text-align: center;
+  width: 100%;
 }
 .about-container > * + * {
   margin-top: 1rem;
@@ -176,18 +175,18 @@ main {
 }
 .about-container p,
 .about-container ul {
+  line-height: 2rem;
   font-size: 1.5rem;
   font-weight: var(--font300);
-  line-height: 2rem;
 }
 .about-container ul {
   column-count: 2;
   column-gap: 8rem;
 }
 .about-container ul li {
-  padding: 0.5rem;
-  list-style: circle;
   display: list-item;
+  list-style: circle;
+  padding: 0.5rem;
 }
 /********** Our Work **********/
 .our-work-swiper-container {
@@ -224,18 +223,18 @@ main {
   width: 100%;
 }
 .swiper-slide {
+  cursor: pointer;
   filter: brightness(35%);
   overflow: hidden;
   position: relative;
   transform: scale(0.8);
   transition: all 0.3s ease-in-out;
   width: var(--swiper-width);
-  cursor: pointer;
 }
 .swiper-slide.swiper-slide-active {
+  filter: brightness(100%);
   opacity: 1 !important;
   transform: scale(1) !important;
-  filter: brightness(100%);
 }
 .swiper-image {
   padding-top: var(--swiper-image-ratio);
@@ -259,9 +258,9 @@ main {
 /************************************************* FOOTER *************************************************/
 footer {
   background-color: var(--color-black);
+  bottom: 0;
   display: flex;
   position: relative;
-  bottom: 0;
   width: 100%;
 }
 footer h2 {
@@ -276,27 +275,27 @@ footer p {
 }
 .contact-us-container,
 .follow-us-container {
-  flex: 1;
   align-items: center;
   display: flex;
-  justify-content: center;
+  flex: 1;
   flex-direction: column;
+  justify-content: center;
 }
 /********** Contact Us Section **********/
 .contact-us {
   align-items: center;
   display: flex;
   flex-direction: column;
-  position: relative;
   margin: 3.5rem 0 2rem 0;
+  position: relative;
 }
 .contact-us-container .strong {
   font-weight: var(--font500);
 }
 .call-email {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   margin-top: 1rem;
 }
@@ -314,18 +313,18 @@ footer p {
   display: flex;
 }
 .follow-us {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
 }
 .social-medias-container {
+  align-items: center;
   display: flex;
   flex-direction: row;
   gap: 5rem;
-  margin-top: 2rem;
-  align-items: center;
   justify-content: center;
+  margin-top: 2rem;
 }
 .social-medias-container a {
   color: var(--color-white);
@@ -337,12 +336,12 @@ footer p {
 }
 /************************************************* CONTACT US FORM *************************************************/
 .form-container {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100%;
   justify-content: center;
   position: relative;
-  height: 100%;
   width: 100%;
 }
 .form-container form {
@@ -350,28 +349,28 @@ footer p {
 }
 .individual-info p,
 .message-container p {
+  font-family: inherit;
   font-size: 1.5rem;
   font-weight: var(--font500);
-  font-family: inherit;
 }
 /********** Inputs **********/
 .individual-info {
   margin-bottom: 0.5rem;
 }
 form .input {
+  border: none;
   display: flex;
   flex-direction: column;
-  border: none;
 }
 form .input input {
-  border: none;
-  background-color: transparent;
   background: transparent;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-white);
   color: var(--color-white);
   font-size: 1rem;
-  border-bottom: 1px solid var(--color-white);
-  padding: 0.25rem 0 0.25rem 0.5rem;
   font-weight: var(--font-500);
+  padding: 0.25rem 0 0.25rem 0.5rem;
 }
 .form-container form input:focus {
   outline: none;
@@ -397,15 +396,14 @@ form input.error {
   padding: 0.5rem 0 0.5rem 0;
 }
 .message-container textarea {
-  resize: none;
-  color: var(--color-white);
-  font-size: 1rem;
-  font-family: inherit;
   background-color: transparent;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
   border: 1px solid var(--color-white);
+  border-radius: 0.25rem;
+  color: var(--color-white);
   font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem;
+  resize: none;
 }
 .message-container textarea:focus {
   outline: none;
@@ -414,22 +412,22 @@ form input.error {
   border: 1px solid red;
 }
 .btn-container {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: flex-end;
   padding: 1rem;
 }
 .btn-container button {
   background-color: #24fe41;
-  flex-basis: 10%;
   border: none;
+  border-radius: 0.25rem;
+  color: var(--color-white);
+  cursor: pointer;
+  flex-basis: 10%;
   font-size: 1.5rem;
   font-weight: var(--font500);
-  color: var(--color-white);
-  border-radius: 0.25rem;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
   padding: 0.5rem;
+  transition: all 0.3s ease-in-out;
 }
 .btn-container button:hover {
   transform: scale(1.1);
@@ -452,27 +450,27 @@ form input.error {
       transparent
     )
     left bottom transparent no-repeat;
-  padding: 1px;
   margin: 0 auto;
+  padding: 1px;
   width: 100%;
 }
 /************************************************* MESSAGE *************************************************/
 #toast {
-  visibility: hidden;
-  transform: translate(-50%, -50%);
   background-color: #24fe41;
+  bottom: 5rem;
   color: var(--color-white);
-  text-align: center;
+  font-size: 1.25rem;
+  left: 50%;
   padding: 1.5rem;
   position: fixed;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
   z-index: 3;
-  left: 50%;
-  bottom: 5rem;
-  font-size: 1.25rem;
 }
 #toast.show {
-  visibility: visible;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  visibility: visible;
 }
 @keyframes fadein {
   from {
@@ -496,21 +494,21 @@ form input.error {
 }
 /********** Contact Us toast **********/
 #toast-sent {
-  visibility: hidden;
-  transform: translate(-50%, -50%);
   background-color: #24fe41;
   color: var(--color-white);
-  text-align: center;
+  font-size: 1.25rem;
+  left: 50%;
   padding: 1.5rem;
   position: fixed;
-  z-index: 3;
-  left: 50%;
+  text-align: center;
   top: 5rem;
-  font-size: 1.25rem;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  z-index: 3;
 }
 #toast-sent.show {
-  visibility: visible;
   animation: fadein-sent 0.5s, fadeout-sent 0.5s 2.5s;
+  visibility: visible;
 }
 @keyframes fadein-sent {
   from {
@@ -561,8 +559,8 @@ form input.error {
   }
   /********** Image and Quote **********/
   .img-quote-container img {
-    width: 100%;
     height: auto;
+    width: 100%;
   }
   .text-quote-container h1 {
     font-size: 4rem;
@@ -600,7 +598,7 @@ form input.error {
   }
   /********** Swiper **********/
   .swiper-slide {
-    width: var(--swiper-width-phone);
+    width: var(--swiper-width);
   }
   /********** FOOTER **********/
   footer {
@@ -640,15 +638,11 @@ form input.error {
   .btn-container button {
     font-size: 1rem;
   }
-  /********** MESSAGE **********/
-  #toast {
-    padding: 1rem;
-    font-size: 1rem;
-  }
-  /********** Contact Us toast **********/
+  /********** TOAST **********/
+  #toast,
   #toast-sent {
-    padding: 1rem;
     font-size: 1rem;
+    padding: 1rem;
   }
 }
 /********************************************************************** TABLET MEDIA QUERY **********************************************************************/
@@ -679,8 +673,8 @@ form input.error {
   }
   /********** Image and Quote **********/
   .img-quote-container img {
-    width: 100%;
     height: auto;
+    width: 100%;
   }
   .text-quote-container h1 {
     font-size: 5rem;
@@ -718,7 +712,7 @@ form input.error {
   }
   /********** Swiper **********/
   .swiper-slide {
-    width: var(--swiper-width-phone);
+    width: var(--swiper-width);
   }
   /********** FOOTER **********/
   footer h2 {
@@ -767,12 +761,8 @@ form input.error {
   .btn-container button {
     font-size: 1.5rem;
   }
-  /********** MESSAGE **********/
-  #toast {
-    padding: 1rem;
-    font-size: 1rem;
-  }
-  /********** Contact Us toast **********/
+  /********** TOAST **********/
+  #toast,
   #toast-sent {
     padding: 1rem;
     font-size: 1rem;
