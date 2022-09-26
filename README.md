@@ -1,6 +1,6 @@
 # Business Website
 
-[Click here](https://www.mnmsteelfab.com/) to visit and interact with website.
+[Click here](https://www.mnmsteelfab.com/) to visit and interact with this website.
 
 ## Description
 
