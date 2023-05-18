@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap");
 /******************* Root *******************/
 :root {
-  --h3: 24px;
-  --paragraph: 18px;
+  --h3: 20px;
+  --paragraph: 16px;
 }
 /******************* Body *******************/
 body {
