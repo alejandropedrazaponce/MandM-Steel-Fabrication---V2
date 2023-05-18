@@ -1,26 +1,66 @@
-@import url("https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap");
-/******************* Root *******************/
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@200;300;400;500;600;700&display=swap");
+/*************** Root ***************/
 :root {
-  --h3: 20px;
-  --paragraph: 16px;
+  --h1-size: 40px;
+  --h2-size: 30px;
+  --h3-size: 20px;
+  --p-size: 16px;
+  --c-size: 14px;
+
+  --bold: 700;
+  --medium: 500;
+  --light: 200;
+
+  --rubik: "Rubik", sans-serif;
+  --exo: "Exo", sans-serif;
 }
-/******************* Body *******************/
+/*************** Fonts ***************/
+h1,
+.hero-section h1 {
+  color: white;
+  font-family: var(--rubik);
+  font-size: var(--h1-size);
+  font-weight: var(--medium);
+}
+h2 {
+  color: white;
+  font-family: var(--rubik);
+  font-size: var(--h2-size);
+  font-weight: var(--bold);
+}
+h3,
+a.nav-link {
+  color: white !important;
+  font-family: var(--exo);
+  font-size: var(--h3-size);
+  font-weight: var(--medium);
+}
+p,
+.hero-section p,
+a.dropdown-item {
+  color: white;
+  font-family: var(--rubik);
+  font-size: var(--p-size);
+  font-weight: var(--light);
+}
+/**************** Body ***************/
 body {
   background-color: black !important;
   overflow-x: hidden;
 }
-/******************* Navbar *******************/
+/*************** Navbar ***************/
+.navbar {
+  background-color: black;
+}
+.navbar-nav {
+  min-height: 100vh;
+  background-color: black;
+}
 .logo-img {
   width: 55px;
   height: auto;
 }
-.navbar-nav .nav-link {
-  color: white !important;
-  font-family: "Exo", sans-serif;
-  font-size: var(--h3);
-  font-weight: 500;
-}
-/*** Hamburger Menu ***/
 .navbar-toggler.custom-toggler {
   border: none;
   padding: 0;
@@ -30,14 +70,46 @@ body {
   outline: none;
   box-shadow: none;
 }
-/*** Dropdown ***/
+/* Dropdown */
 .dropdown-menu {
   background-color: transparent !important;
-  font-family: "Rubik", sans-serif;
 }
-.dropdown-item {
-  color: white !important;
-  font-family: "Rubik", sans-serif;
-  font-weight: 400;
-  font-size: var(--paragraph);
+/*************** Hero Section ***************/
+.hero-section {
+  position: relative;
+  margin-top: 70px;
+}
+.hero-image {
+  background-image: url("Images/mm-steel-fab-owner-welding.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  opacity: 0.25;
+}
+.hero-section .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.hero-section .divider {
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  margin: 16px 0;
+}
+/*************** Gallery Section ***************/
+.square-container {
+  position: relative;
+  padding-top: 100%;
+  overflow: hidden;
+}
+.square-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
